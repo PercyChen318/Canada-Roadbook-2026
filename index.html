@@ -211,8 +211,26 @@
       .event-content{border-color:#34404c}
     }
   </style>
+
+<style>
+#passwordGate{position:fixed;inset:0;background:#13233a;z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px}
+#passwordBox{background:white;border-radius:22px;padding:28px;width:min(380px,100%);text-align:center}
+#roadPassword{width:100%;padding:12px;border-radius:12px;border:1px solid #ccc;font-size:16px;margin:12px 0}
+#passwordBtn{width:100%;padding:12px;border:0;border-radius:12px;background:#13233a;color:white;font-weight:700}
+#passwordError{color:#a33;display:none;margin-top:10px}
+</style>
 </head>
 <body>
+<div id="passwordGate">
+<div id="passwordBox">
+<h2>🇨🇦 Canada Roadbook 2026</h2>
+<p>请输入访问密码查看私人旅行路书</p>
+<input id="roadPassword" type="password" placeholder="Password">
+<button id="passwordBtn">进入路书</button>
+<div id="passwordError">密码错误</div>
+</div>
+</div>
+
 <div class="app">
   <header class="hero">
     <div class="eyebrow">Canada Roadbook · Day 1</div>
@@ -580,6 +598,23 @@
   });
 
   render();
+})();
+</script>
+
+<script>
+(function(){
+const PASSWORD="PercyChen318";
+const gate=document.getElementById("passwordGate");
+const input=document.getElementById("roadPassword");
+const btn=document.getElementById("passwordBtn");
+const err=document.getElementById("passwordError");
+if(localStorage.getItem("roadbook_access")==="yes"){gate.style.display="none";}
+btn.onclick=function(){
+ if(input.value===PASSWORD){
+  localStorage.setItem("roadbook_access","yes");
+  gate.style.display="none";
+ }else{err.style.display="block";}
+};
 })();
 </script>
 </body>
