@@ -1,0 +1,9 @@
+{
+  "name":"Percy’s Canada Roadbook 2026",
+  "short_name":"Canada Roadbook",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#f2efe7",
+  "theme_color":"#18344a",
+  "icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

@@ -1,26 +1,15 @@
-# Canada Roadbook 2026
+# Percy’s Canada Roadbook 2026 — Day 1–2
 
-这是 2026 加拿大旅行路书的 GitHub Pages 网站文件。
+手机优先的 GitHub Pages 路书原型。
 
-## 发布方法
+## 更新 GitHub Pages
+将本文件夹内以下文件上传并覆盖到仓库根目录：
+- index.html
+- manifest.webmanifest
+- icon.svg
+- sw.js
+- .nojekyll
 
-1. 打开你的 GitHub 仓库。
-2. 点击 **Add file → Upload files**。
-3. 上传本 ZIP 解压后的全部文件：
-   - `index.html`
-   - `.nojekyll`
-   - `README.md`
-4. 提交后进入 **Settings → Pages**。
-5. 在 **Build and deployment** 中选择：
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/ (root)`
-6. 点击 **Save**，等待约 1–3 分钟。
+访问密码：`PercyChen318`
 
-网站地址通常为：
-
-`https://你的GitHub用户名.github.io/仓库名/`
-
-## 当前内容
-
-目前仅包含 2026 年 10 月 1 日的手机端互动路书模板。
+由于浏览器 Service Worker 可能缓存旧版本，覆盖后如未立即更新，请刷新页面，或关闭后重新打开；必要时清除该网站的数据。
