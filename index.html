@@ -208,6 +208,16 @@
       }
       .reminder-item span{color:#bcc6cc}
     }
+
+/* v3.0 full roadbook */
+.daytabs{overflow-x:auto;scrollbar-width:none}
+.daytabs::-webkit-scrollbar{display:none}
+.daytab{white-space:nowrap}
+.hero-content p{max-width:42rem}
+@media(max-width:560px){
+  .hero-content h1{font-size:30px}
+  .summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 </style>
 </head>
 <body>
@@ -224,15 +234,14 @@
 <div class="app" id="app">
 <header class="topbar">
 <div class="brandrow">
-<div class="brand"><div class="brandmark">🏔</div><div><strong>Canada Roadbook 2026</strong><small>Vancouver · Jasper · Banff</small></div></div>
+<div class="brand"><div class="brandmark">🏔</div><div><strong>Canada Roadbook 2026</strong><small>Seattle · Jasper · Lake Louise · Banff · Vancouver</small></div></div>
 <button class="iconbtn" id="logout">退出 🔒</button>
 </div>
-<div class="daytabs">
-<button class="daytab active" data-day="day1">DAY 1 · Seattle</button>
-<button class="daytab" data-day="day2">DAY 2 · Road Trip</button>
-</div>
+<div class="daytabs"><button class="daytab active" data-day="day1">DAY 1 · Seattle</button><button class="daytab" data-day="day2">DAY 2 · Road Trip</button><button class="daytab" data-day="day3">DAY 3 · Jasper</button><button class="daytab" data-day="day4">DAY 4 · Icefields</button><button class="daytab" data-day="day5">DAY 5 · Lakes</button><button class="daytab" data-day="day6">DAY 6 · Banff</button><button class="daytab" data-day="day7">DAY 7 · Return</button><button class="daytab" data-day="day8">DAY 8 · Vancouver</button><button class="daytab" data-day="day9">DAY 9 · Depart</button></div>
 </header>
-<section class="day active" id="day1">
+
+
+<section class="day active" data-map="https://www.google.com/maps/dir/?api=1&amp;origin=Seattle-Tacoma+International+Airport&amp;destination=Argosy+Cruises+Pier+55&amp;waypoints=Pike+Place+Market&amp;travelmode=driving" id="day1">
 <div class="hero">
 <img alt="Seattle skyline from Elliott Bay" src="https://commons.wikimedia.org/wiki/Special:FilePath/Seattle_skyline_from_Elliott_Bay.jpg?width=1800"/>
 <div class="hero-content">
@@ -358,8 +367,7 @@
 <li>图片：Pike Place Fish 1、Seattle Waterfront、Seattle skyline from Elliott Bay、Matt’s entrance、Piroshky storefront；图片版权分别见页面说明。Luke’s 菜品图来自官方菜单。</li>
 </ul></details></div></div>
 </main>
-</section>
-<section class="day" id="day2">
+</section><section class="day" data-map="https://www.google.com/maps/dir/?api=1&amp;origin=SIXT+Vancouver+Airport+4440+Cowley+Crescent&amp;destination=Patricia+Lake+Bungalows&amp;waypoints=T%26T+Supermarket+Lansdowne+Store%7CLittle+Beetle+Chilliwack%7CKamloops%7CValemount&amp;travelmode=driving" id="day2">
 <div class="hero">
 <img alt="Pyramid Mountain over Patricia Lake" src="https://commons.wikimedia.org/wiki/Special:FilePath/Pyramid_Mountain_Jasper_Alberta_05-A.jpg?width=1800"/>
 <div class="hero-content">
@@ -561,18 +569,568 @@
 </ul></details>
 </div></div>
 </main>
-</section>
-<div class="footer">Percy’s Canada Roadbook · Prototype v2.6<br/>距离与车程均为近似值，出发当天以实时地图、天气和道路公告为准。</div>
+</section><section class="day" data-map="https://www.google.com/maps/dir/?api=1&amp;origin=Patricia+Lake+Bungalows&amp;destination=The+Raven+Bistro+Jasper&amp;waypoints=Bear%27s+Paw+Bakery%7CMaligne+Lake%7CMedicine+Lake%7CSunwapta+Falls%7CAthabasca+Falls%7CStutfield+Glacier+Viewpoint&amp;travelmode=driving" id="day3">
+<div class="hero">
+<img alt="Maligne Lake" src="https://commons.wikimedia.org/wiki/Special:FilePath/Maligne%20Lake%20Spirit%20Island.jpg?width=1800"/>
+<div class="hero-content">
+<div class="kicker">Day 3 · Saturday · October 3</div>
+<h1>Jasper National Park</h1>
+<p>以 Maligne Lake 为主角，串联 Medicine Lake、Sunwapta Falls、Athabasca Falls 和 Icefields Parkway 南段风景，晚上回 Jasper 镇用餐。</p>
+<div class="route-line-top"><span>PATRICIA LAKE</span><i></i><span>MALIGNE LAKE</span><i></i><span>ICEFIELDS PARKWAY</span><i></i><span>JASPER TOWN</span></div>
+</div>
+</div>
+<main>
+<div class="card"><div class="pad">
+<div class="summary">
+<div class="summary-box"><small>当天性质</small><strong>Jasper 经典景观日</strong></div>
+<div class="summary-box"><small>核心体验</small><strong>Maligne Lake + 两大瀑布</strong></div>
+<div class="summary-box"><small>节奏</small><strong>白天分散停留，傍晚回镇</strong></div>
+<div class="summary-box"><small>晚间住宿</small><strong>Patricia Lake Bungalows</strong></div>
+</div>
+</div></div>
+<div class="booking-strip">
+<div class="booking-pill"><b>11:00</b> Maligne Lake</div>
+<div class="booking-pill"><b>20:00</b> Raven Bistro</div>
+<div class="booking-pill"><b>入住</b> Patricia Lake</div>
+</div>
+<div class="sectionhead" id="route3"><h2>当天路线</h2><small>固定晚餐保留时间；景点按顺路逻辑串联</small></div>
+<div class="card route-card">
+<div class="stop"><div class="stop-icon">🏨</div><div><h3>Patricia Lake Bungalows</h3><p>从湖畔木屋出发，先回 Jasper 镇简单早餐，再走 Maligne Lake Road 深入公园东侧。</p></div></div>
+<div class="segment"><span class="mode">🚗 市区驾驶</span> 约 <strong>6 km · 8–10 min</strong></div>
+<div class="stop"><div class="stop-icon">🥐</div><div><h3>Bear's Paw Bakery</h3><p>可作为轻松早餐或打包点心的第一站。若不想停留过久，可直接外带上车。</p></div></div>
+<div class="segment"><span class="mode">🚗 Maligne Lake Road</span> 约 <strong>48 km · 50–55 min</strong></div>
+<div class="stop"><div class="stop-icon">🏔️</div><div><h3>Maligne Lake</h3><p>今天最重要的主景点。湖区步行轻松，若不参加项目，也很适合只在湖边拍照和短暂散步。</p></div></div>
+<div class="segment"><span class="mode">🚗 Scenic Drive</span> 约 <strong>22 km · 20–25 min</strong></div>
+<div class="stop"><div class="stop-icon">🌊</div><div><h3>Medicine Lake</h3><p>回程顺路停留的观景点，适合 10–15 分钟快速拍照，不会额外增加太多体力消耗。</p></div></div>
+<div class="segment"><span class="mode">🚗 Hwy 93 South</span> 约 <strong>115 km · 1 h 45 min</strong></div>
+<div class="stop"><div class="stop-icon">💧</div><div><h3>Sunwapta Falls</h3><p>第一座主要瀑布，步行距离短，适合作为下午的第一站。</p></div></div>
+<div class="segment"><span class="mode">🚗 Icefields Parkway</span> 约 <strong>55 km · 40–45 min</strong></div>
+<div class="stop"><div class="stop-icon">💦</div><div><h3>Athabasca Falls</h3><p>Jasper 最有冲击力的瀑布之一，观景步道成熟，晚一些到访也很适合。</p></div></div>
+<div class="segment"><span class="mode">🚗 Scenic Stops</span> 约 <strong>65 km · 50–55 min</strong></div>
+<div class="stop"><div class="stop-icon">📷</div><div><h3>Stutfield Glacier Viewpoint / Tangle Creek</h3><p>沿途日落感最好的备用停留点，二选一即可，不必全部完成。</p></div></div>
+<div class="segment"><span class="mode">🚗 Return to Jasper</span> 约 <strong>95 km · 1 h 15 min</strong></div>
+<div class="stop"><div class="stop-icon">🍽️</div><div><h3>20:00 · The Raven Bistro <span class="badge fixed">已预约</span></h3><p>回到 Jasper 镇后用正餐收尾。建议把主菜放在这里，不需要在白天安排太正式的午餐。</p></div></div>
+<div class="segment"><span class="mode">🚗 Town Drive</span> 约 <strong>3 km · 5–7 min</strong></div>
+<div class="stop"><div class="stop-icon">🏨</div><div><h3>Patricia Lake Bungalows <span class="badge fixed">已预订</span></h3><p>晚间直接回酒店休息。若回程较晚，可跳过最后一个冰原大道停留点。</p></div></div>
+<div class="route-actions">
+<a class="btn primary" href="https://www.google.com/maps/dir/?api=1&amp;origin=Patricia+Lake+Bungalows&amp;destination=The+Raven+Bistro+Jasper&amp;waypoints=Bear%27s+Paw+Bakery%7CMaligne+Lake%7CMedicine+Lake%7CSunwapta+Falls%7CAthabasca+Falls&amp;travelmode=driving" target="_blank">打开 Day 3 完整路线</a>
+</div>
+</div>
+<div class="sectionhead"><h2>关键体验</h2><small>一湖两瀑，是 Jasper 最经典也最轻松的组合</small></div>
+<article class="card feature">
+<div class="image-pair">
+<img alt="Maligne Lake" class="zoomable" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Maligne%20Lake%20Spirit%20Island.jpg?width=1400"/>
+<img alt="Athabasca Falls" class="zoomable" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Athabasca%20Falls.jpg?width=1400"/>
+</div>
+<div class="caption">Maligne Lake / Athabasca Falls · 点击图片放大</div>
+<div class="feature-content">
+<div class="feature-top"><div><h3>Maligne Lake + Athabasca Falls</h3><p>Maligne Lake 负责“Jasper 湖景名片”，Athabasca Falls 负责“地貌冲击感”。两者结合后，这一天既有照片质量，也不至于太赶。</p></div></div>
+<div class="feature-meta"><span class="meta">🏔️ Jasper 代表景观</span><span class="meta">🚗 自驾顺路</span><span class="meta">📷 出片率高</span></div>
+</div>
+</article>
+<div class="sectionhead"><h2>餐厅与推荐菜</h2><small>以晚餐为主；白天餐食保持轻量</small></div>
+<div class="restaurant-grid">
+<article class="restaurant-card hero-wide">
+<div class="restaurant-body">
+<div class="restaurant-top"><div><h3>The Raven Bistro</h3><p class="muted">20:00 · 已预约 · 晚餐主选</p></div><span class="badge fixed">主计划</span></div>
+<p class="restaurant-intro">Jasper 镇内口碑很好的晚餐餐厅，适合把当天最正式的一餐放在这里。菜单会按季节调整，以下菜品以其一贯受欢迎的肉类、海鲜和主食方向为主。</p>
+<div class="dish-heading">推荐 3 道</div>
+<div class="dish-list">
+<div class="dish"><span class="dish-num">1</span><div><b>Bison Short Rib / Beef 主菜</b><small>适合作为一天结束后的正式肉类主菜。</small></div></div>
+<div class="dish"><span class="dish-num">2</span><div><b>Seafood Pasta</b><small>海鲜感更强，也更适合两个人分享搭配。</small></div></div>
+<div class="dish"><span class="dish-num">3</span><div><b>Mussels / Seafood Bowl</b><small>若想吃得轻一点，可选择贝类或海鲜锅作为主食型热菜。</small></div></div>
+</div>
+<p class="map-note">具体菜品以当日菜单为准。</p>
+</div>
+</article>
+</div>
+<div class="card notice"><div class="pad">
+<h3>Day 3 提醒</h3>
+<p><strong>今天不需要追求“多”</strong>。Maligne Lake 已经足够代表 Jasper；若下午体力一般，Stutfield Glacier / Tangle Creek 只保留一个即可。傍晚回程请留意野生动物。</p>
+</div></div>
+</main>
+</section><section class="day" data-map="https://www.google.com/maps/dir/?api=1&amp;origin=Patricia+Lake+Bungalows&amp;destination=Post+Hotel+%26+Spa+Lake+Louise&amp;waypoints=Otto%27s+Cache+Provisions+%2B+Cafe%7CColumbia+Icefield%7CMistaya+Canyon%7CPeyto+Lake%7CBow+Lake%7CCrowfoot+Glacier+Viewpoint&amp;travelmode=driving" id="day4">
+<div class="hero">
+<img alt="Peyto Lake" src="https://commons.wikimedia.org/wiki/Special:FilePath/Peyto%20Lake-Banff%20National%20Park.jpg?width=1800"/>
+<div class="hero-content">
+<div class="kicker">Day 4 · Sunday · October 4</div>
+<h1>Icefields Parkway Transfer Day</h1>
+<p>上午用 Ice Odyssey 打开冰原体验，下午顺着 Icefields Parkway 一路向南，把 Peyto Lake、Bow Lake 和 Crowfoot Glacier 串成一次高质量转场。</p>
+<div class="route-line-top"><span>JASPER</span><i></i><span>COLUMBIA ICEFIELD</span><i></i><span>PEYTO</span><i></i><span>LAKE LOUISE</span></div>
+</div>
+</div>
+<main>
+<div class="card"><div class="pad">
+<div class="summary">
+<div class="summary-box"><small>当天性质</small><strong>转场 + 冰原体验</strong></div>
+<div class="summary-box"><small>核心体验</small><strong>Ice Odyssey + Peyto Lake</strong></div>
+<div class="summary-box"><small>节奏</small><strong>上午固定活动，下午顺路观景</strong></div>
+<div class="summary-box"><small>晚间住宿</small><strong>Post Hotel &amp; Spa</strong></div>
+</div>
+</div></div>
+<div class="booking-strip">
+<div class="booking-pill"><b>11:30</b> Ice Odyssey</div>
+<div class="booking-pill"><b>20:00</b> The Dining Room</div>
+<div class="booking-pill"><b>入住</b> Post Hotel</div>
+</div>
+<div class="sectionhead" id="route4"><h2>当天路线</h2><small>今天的逻辑是“先固定活动，再一路往南顺开”</small></div>
+<div class="card route-card">
+<div class="stop"><div class="stop-icon">🏨</div><div><h3>Patricia Lake Bungalows</h3><p>退房后离开 Jasper，先回镇内吃早餐，再直奔 Columbia Icefield，上午不再增加其他支线。</p></div></div>
+<div class="segment"><span class="mode">🚗 Town Drive</span> 约 <strong>6 km · 8–10 min</strong></div>
+<div class="stop"><div class="stop-icon">☕️</div><div><h3>Otto's Cache Provisions + Café</h3><p>适合作为这一天的正式早餐站，避免空腹上冰原路段。</p></div></div>
+<div class="segment"><span class="mode">🚗 Icefields Parkway</span> 约 <strong>105 km · 1 h 25 min</strong></div>
+<div class="stop"><div class="stop-icon">🧊</div><div><h3>11:30 · Ice Odyssey <span class="badge fixed">已预订</span></h3><p>今天唯一必须卡时间的活动。活动前建议提前到达并留出上洗手间和换衣的时间。</p></div></div>
+<div class="segment"><span class="mode">🚗 Scenic Stop</span> 约 <strong>55 km · 45 min</strong></div>
+<div class="stop"><div class="stop-icon">🥾</div><div><h3>Mistaya Canyon</h3><p>短步道型停留，适合作为活动后重新活动身体的一站；若当天较累，可直接跳过。</p></div></div>
+<div class="segment"><span class="mode">🚗 Hwy 93 South</span> 约 <strong>35 km · 30 min</strong></div>
+<div class="stop"><div class="stop-icon">💙</div><div><h3>Peyto Lake Lookout (+ Bow Summit Viewpoint)</h3><p>下午最值得保留的观景点。若天气给力，优先把时间留给 Peyto，而不是在太多小点位分散停留。</p></div></div>
+<div class="segment"><span class="mode">🚗 Short Scenic Drive</span> 约 <strong>5 km · 8 min</strong></div>
+<div class="stop"><div class="stop-icon">🏞️</div><div><h3>Bow Lake</h3><p>就在公路边，停留成本很低，适合快速看湖和倒影。</p></div></div>
+<div class="segment"><span class="mode">🚗 Parkway Viewpoint</span> 约 <strong>4 km · 5 min</strong></div>
+<div class="stop"><div class="stop-icon">📷</div><div><h3>Crowfoot Glacier Viewpoint <span class="badge option">看天气</span></h3><p>如果天气和时间都还不错，可以作为最后一个轻量停留；否则直接下山去 Lake Louise。</p></div></div>
+<div class="segment"><span class="mode">🚗 To Lake Louise</span> 约 <strong>37 km · 35 min</strong></div>
+<div class="stop"><div class="stop-icon">🏨</div><div><h3>Post Hotel &amp; Spa <span class="badge fixed">已预订</span></h3><p>抵达 Lake Louise 后先办理入住和简单整理，再准备晚餐。</p></div></div>
+<div class="segment"><span class="mode">🚶 / 短途驾驶</span> 约 <strong>2 km · 5 min</strong></div>
+<div class="stop"><div class="stop-icon">🍽️</div><div><h3>20:00 · The Dining Room <span class="badge fixed">已预约</span></h3><p>把这一天最正式的用餐放在酒店附近，回程轻松，也符合转场日的节奏。</p></div></div>
+<div class="route-actions">
+<a class="btn primary" href="https://www.google.com/maps/dir/?api=1&amp;origin=Patricia+Lake+Bungalows&amp;destination=Post+Hotel+%26+Spa+Lake+Louise&amp;waypoints=Otto%27s+Cache+Provisions+%2B+Cafe%7CColumbia+Icefield%7CMistaya+Canyon%7CPeyto+Lake&amp;travelmode=driving" target="_blank">打开 Day 4 完整路线</a>
+</div>
+</div>
+<div class="card reminder-card"><div class="pad">
+<div class="kicker">Mountain Drive Notes</div>
+<h2 style="margin:6px 0 0;font-size:21px">高海拔与天气提醒</h2>
+<div class="reminder-grid">
+<div class="reminder-item"><b>🌦 早晚温差明显</b><span>冰原区域比 Jasper 和 Lake Louise 都更冷，衣物尽量分层。</span></div>
+<div class="reminder-item"><b>💨 观景点风大</b><span>Peyto、Bow Lake 和冰原都可能体感更低，避免穿得太轻。</span></div>
+<div class="reminder-item"><b>🕓 观景点不贪多</b><span>Peyto Lake 优先级最高；天气一般时宁可少停，也不要一路赶点。</span></div>
+<div class="reminder-item"><b>🦌 黄昏继续留意动物</b><span>下山去 Lake Louise 的最后一段也要注意野生动物穿越。</span></div>
+</div>
+</div></div>
+<div class="sectionhead"><h2>关键体验</h2><small>今天最该保留的，是冰原和 Peyto</small></div>
+<article class="card feature">
+<div class="image-pair">
+<img alt="Columbia Icefield" class="zoomable" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Columbia%20Icefield.jpg?width=1400"/>
+<img alt="Peyto Lake" class="zoomable" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Peyto%20Lake-Banff%20National%20Park.jpg?width=1400"/>
+</div>
+<div class="caption">Columbia Icefield / Peyto Lake · 点击图片放大</div>
+<div class="feature-content">
+<div class="feature-top"><div><h3>Ice Odyssey + Peyto Lake</h3><p>一个偏“体验感”，一个偏“照片感”。转场日只要把这两项保住，整体质量就已经很高。</p></div></div>
+<div class="feature-meta"><span class="meta">🧊 冰原体验</span><span class="meta">💙 Banff 名片</span><span class="meta">🚗 最强公路风景</span></div>
+</div>
+</article>
+<div class="sectionhead"><h2>餐厅与推荐菜</h2><small>早餐轻松，晚餐正式</small></div>
+<div class="restaurant-grid">
+<article class="restaurant-card">
+<div class="restaurant-body">
+<div class="restaurant-top"><h3>Otto's Cache Provisions + Café</h3><span class="badge option">早餐</span></div>
+<p class="restaurant-intro">Jasper 出发前的舒适早餐点，适合点一份主食再配咖啡，避免冰原活动前过于匆忙。</p>
+<div class="dish-heading">推荐 3 道</div>
+<div class="dish-list">
+<div class="dish"><span class="dish-num">1</span><div><b>Breakfast Sandwich</b><small>稳妥高效，最适合出发日。</small></div></div>
+<div class="dish"><span class="dish-num">2</span><div><b>Eggs Benedict</b><small>想吃得完整一些时的首选。</small></div></div>
+<div class="dish"><span class="dish-num">3</span><div><b>Soup + Sandwich</b><small>天气偏冷时更舒服。</small></div></div>
+</div>
+</div>
+</article>
+<article class="restaurant-card">
+<div class="restaurant-body">
+<div class="restaurant-top"><div><h3>The Dining Room</h3><p class="muted">20:00 · 已预约</p></div><span class="badge fixed">晚餐主选</span></div>
+<p class="restaurant-intro">Lake Louise 的经典正式晚餐环境，适合把肉类主菜和完整用餐体验放在这一天结尾。</p>
+<div class="dish-heading">推荐 3 道</div>
+<div class="dish-list">
+<div class="dish"><span class="dish-num">1</span><div><b>Alberta Beef Steak</b><small>最适合作为高山转场日的正式主菜。</small></div></div>
+<div class="dish"><span class="dish-num">2</span><div><b>Salmon / Trout 主菜</b><small>想吃海鲜时的稳妥方向。</small></div></div>
+<div class="dish"><span class="dish-num">3</span><div><b>Pasta / Risotto</b><small>如果想吃得轻一些，主食型热菜更合适。</small></div></div>
+</div>
+</div>
+</article>
+</div>
+</main>
+</section><section class="day" data-map="https://www.google.com/maps/dir/?api=1&amp;origin=Post+Hotel+%26+Spa+Lake+Louise&amp;destination=Canmore+Crossing&amp;waypoints=Lake+Louise+Park+and+Ride%7CMoraine+Lake%7CLake+Louise%7CEmerald+Lake%7CNatural+Bridge%7CTakakkaw+Falls&amp;travelmode=driving" id="day5">
+<div class="hero">
+<img alt="Moraine Lake" src="https://commons.wikimedia.org/wiki/Special:FilePath/Moraine%20Lake%2017092005.jpg?width=1800"/>
+<div class="hero-content">
+<div class="kicker">Day 5 · Monday · October 5</div>
+<h1>Lake Louise &amp; Yoho Lakes Day</h1>
+<p>上午把 Moraine Lake 和 Lake Louise 作为重头戏，下午转去 Yoho National Park，以 Emerald Lake Kayak 为核心，再视路况补充 Natural Bridge 和 Takakkaw Falls。</p>
+<div class="route-line-top"><span>LAKE LOUISE</span><i></i><span>MORAINE</span><i></i><span>EMERALD LAKE</span><i></i><span>CANMORE</span></div>
+</div>
+</div>
+<main>
+<div class="card"><div class="pad">
+<div class="summary">
+<div class="summary-box"><small>当天性质</small><strong>湖景高密度日</strong></div>
+<div class="summary-box"><small>核心体验</small><strong>Moraine + Emerald Kayak</strong></div>
+<div class="summary-box"><small>时间关键</small><strong>Shuttle / Kayak 两个固定点</strong></div>
+<div class="summary-box"><small>晚间住宿</small><strong>Canmore Crossing</strong></div>
+</div>
+</div></div>
+<div class="booking-strip">
+<div class="booking-pill"><b>09:00</b> Shuttle Bus</div>
+<div class="booking-pill"><b>15:15</b> Emerald Kayak</div>
+<div class="booking-pill"><b>入住</b> Canmore Crossing</div>
+</div>
+<div class="sectionhead" id="route5"><h2>当天路线</h2><small>今天最重要的是把节奏留给两座湖和划船</small></div>
+<div class="card route-card">
+<div class="stop"><div class="stop-icon">🏨</div><div><h3>Post Hotel &amp; Spa</h3><p>早餐后从 Lake Louise 出发，先把 shuttle 和 Moraine Lake 完成，再按体力决定 Lake Louise 停留时长。</p></div></div>
+<div class="segment"><span class="mode">🚌 Shuttle</span> 约 <strong>14 km · 25–30 min</strong></div>
+<div class="stop"><div class="stop-icon">💙</div><div><h3>Moraine Lake (Rockpile Trail) <span class="badge fixed">重点</span></h3><p>今天上午最值得保留的点位。Rockpile Trail 轻松，视野好，适合尽量把时间留在这里。</p></div></div>
+<div class="segment"><span class="mode">🚌 Shuttle / 短途转场</span> 约 <strong>16 km · 25–30 min</strong></div>
+<div class="stop"><div class="stop-icon">🏞️</div><div><h3>Lake Louise</h3><p>湖边停留可灵活控制。若下午想把重心放在 Yoho，Lake Louise 不必安排太长时间。</p></div></div>
+<div class="segment"><span class="mode">🥾 湖边步行</span> 约 <strong>2.2 km RT · 1–1.5 h</strong></div>
+<div class="stop"><div class="stop-icon">👟</div><div><h3>Fairview Lookout</h3><p>如果体力和天气都不错，可以作为 Lake Louise 的代表性轻徒步；若当天想轻松一些，可以直接省略。</p></div></div>
+<div class="segment"><span class="mode">☕️ 午间补给</span> 约 <strong>3 km · 5 min</strong></div>
+<div class="stop"><div class="stop-icon">🍳</div><div><h3>Bill Peyto's Café</h3><p>适合作为简单午餐或热饮补给，再转向 Yoho National Park。</p></div></div>
+<div class="segment"><span class="mode">🚗 To Yoho</span> 约 <strong>44 km · 35–40 min</strong></div>
+<div class="stop"><div class="stop-icon">🛶</div><div><h3>15:15 · Emerald Lake Kayak <span class="badge fixed">已预订</span></h3><p>今天下午最重要的固定活动。划船和湖边散步都适合留出较完整时间。</p></div></div>
+<div class="segment"><span class="mode">🚗 Yoho Short Stops</span> 约 <strong>9 km · 10 min</strong></div>
+<div class="stop"><div class="stop-icon">🌉</div><div><h3>Natural Bridge</h3><p>非常顺路的短停点，几乎不费力，适合快速看完继续走。</p></div></div>
+<div class="segment"><span class="mode">🚗 Optional Detour</span> 约 <strong>13 km · 20 min</strong></div>
+<div class="stop"><div class="stop-icon">💦</div><div><h3>Takakkaw Falls <span class="badge option">视路况</span></h3><p>若道路开放、时间也还宽松，可以作为 Yoho 的最后加分项；否则可以放弃，整体节奏会更轻松。</p></div></div>
+<div class="segment"><span class="mode">🚗 To Canmore</span> 约 <strong>86 km · 1 h</strong></div>
+<div class="stop"><div class="stop-icon">🏨</div><div><h3>Canmore Crossing <span class="badge fixed">已预订</span></h3><p>到达后先办理入住，再决定是否外出用餐。</p></div></div>
+<div class="segment"><span class="mode">🚶 / 短途驾驶</span> 约 <strong>2 km · 5 min</strong></div>
+<div class="stop"><div class="stop-icon">🍽️</div><div><h3>BLAKE Restaurant Brewhouse and Distillery</h3><p>可作为当晚主用餐点；如果到达较晚，也可以简化成就近解决。</p></div></div>
+<div class="route-actions">
+<a class="btn primary" href="https://www.google.com/maps/dir/?api=1&amp;origin=Post+Hotel+%26+Spa+Lake+Louise&amp;destination=Canmore+Crossing&amp;waypoints=Lake+Louise+Park+and+Ride%7CMoraine+Lake%7CLake+Louise%7CEmerald+Lake%7CNatural+Bridge&amp;travelmode=driving" target="_blank">打开 Day 5 完整路线</a>
+</div>
+</div>
+<div class="sectionhead"><h2>关键体验</h2><small>上午看经典湖，下午把体验感交给 Emerald Kayak</small></div>
+<article class="card feature">
+<div class="image-pair">
+<img alt="Moraine Lake" class="zoomable" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Moraine%20Lake%2017092005.jpg?width=1400"/>
+<img alt="Emerald Lake" class="zoomable" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Emerald%20Lake%2C%20Yoho%20National%20Park.jpg?width=1400"/>
+</div>
+<div class="caption">Moraine Lake / Emerald Lake · 点击图片放大</div>
+<div class="feature-content">
+<div class="feature-top"><div><h3>Moraine Lake + Emerald Lake</h3><p>Moraine 更像“必须看”，Emerald 更像“必须体验”。一静一动，刚好组成这一天最完整的湖景记忆点。</p></div></div>
+<div class="feature-meta"><span class="meta">💙 经典湖景</span><span class="meta">🛶 划船体验</span><span class="meta">📷 全天高质量</span></div>
+</div>
+</article>
+<div class="card notice"><div class="pad">
+<h3>Day 5 提醒</h3>
+<p><strong>Lake Louise 和 Yoho 之间一定要做取舍。</strong> 如果上午在 Moraine Lake 和 Lake Louise 已经花了较多时间，下午就优先保住 Emerald Lake Kayak，Takakkaw Falls 只作为加分项。</p>
+</div></div>
+</main>
+</section><section class="day" data-map="https://www.google.com/maps/dir/?api=1&amp;origin=Canmore+Crossing&amp;destination=Canmore+Crossing&amp;waypoints=Johnston+Canyon%7CSurprise+Corner+Viewpoint%7CBow+Falls%7CBanff+Avenue%7CThe+Bison+Restaurant+%26+Terrace%7CBanff+Gondola&amp;travelmode=driving" id="day6">
+<div class="hero">
+<img alt="Banff Gondola" src="https://commons.wikimedia.org/wiki/Special:FilePath/Banff%20Gondola.jpg?width=1800"/>
+<div class="hero-content">
+<div class="kicker">Day 6 · Tuesday · October 6</div>
+<h1>Banff Town &amp; Gondola Day</h1>
+<p>上午轻松看 Johnston Canyon，下午把重心放在 Banff 镇和 Sulphur Mountain Gondola。整体节奏比前两天更休闲，也更适合留出吃饭和逛街时间。</p>
+<div class="route-line-top"><span>CANMORE</span><i></i><span>JOHNSTON</span><i></i><span>BANFF TOWN</span><i></i><span>GONDOLA</span></div>
+</div>
+</div>
+<main>
+<div class="card"><div class="pad">
+<div class="summary">
+<div class="summary-box"><small>当天性质</small><strong>小徒步 + Banff 半日</strong></div>
+<div class="summary-box"><small>核心体验</small><strong>Johnston Canyon + Gondola</strong></div>
+<div class="summary-box"><small>固定活动</small><strong>16:00 晚餐 / 18:10 缆车</strong></div>
+<div class="summary-box"><small>晚间住宿</small><strong>Canmore Crossing</strong></div>
+</div>
+</div></div>
+<div class="booking-strip">
+<div class="booking-pill"><b>16:00</b> The Bison</div>
+<div class="booking-pill"><b>18:10–19:30</b> Gondola</div>
+<div class="booking-pill"><b>入住</b> Canmore Crossing</div>
+</div>
+<div class="sectionhead" id="route6"><h2>当天路线</h2><small>今天的关键词是“轻松、好走、好逛”</small></div>
+<div class="card route-card">
+<div class="stop"><div class="stop-icon">🏨</div><div><h3>Canmore Crossing</h3><p>从 Canmore 出发，先用一顿舒适早餐，再去 Johnston Canyon 做这一天最主要的户外活动。</p></div></div>
+<div class="segment"><span class="mode">🚗 Town Drive</span> 约 <strong>2 km · 5 min</strong></div>
+<div class="stop"><div class="stop-icon">☕️</div><div><h3>One98eight</h3><p>作为早餐主选，比赶时间更重要的是吃得舒服一些；今天整体并不需要太早。</p></div></div>
+<div class="segment"><span class="mode">🚗 Bow Valley Parkway</span> 约 <strong>30 km · 30–35 min</strong></div>
+<div class="stop"><div class="stop-icon">🥾</div><div><h3>Johnston Canyon (Lower Falls)</h3><p>只做 Lower Falls 就足够，步道成熟、景观稳定，也能把体力留给下午和傍晚。</p></div></div>
+<div class="segment"><span class="mode">🚗 To Banff</span> 约 <strong>28 km · 30 min</strong></div>
+<div class="stop"><div class="stop-icon">📷</div><div><h3>Surprise Corner Viewpoint</h3><p>Banff 镇周边最顺路的摄影停留点之一，适合 10 分钟快速拍照。</p></div></div>
+<div class="segment"><span class="mode">🚗 Short Scenic Drive</span> 约 <strong>2 km · 5 min</strong></div>
+<div class="stop"><div class="stop-icon">🌊</div><div><h3>Bow Falls Viewpoint</h3><p>同样属于低成本、高回报的停留点，配合 Banff 镇内移动很顺。</p></div></div>
+<div class="segment"><span class="mode">🚶 Banff Avenue</span> 镇内约 <strong>0.5–2 km</strong></div>
+<div class="stop"><div class="stop-icon">🛍️</div><div><h3>Shopping (Big Bear, Monod, COWS)</h3><p>把购物集中在下午晚餐前完成即可。今天不需要再额外安排 Maple Leaf，用餐主线统一保留 The Bison。</p></div></div>
+<div class="segment"><span class="mode">🚗 To Dinner</span> 约 <strong>2 km · 5–8 min</strong></div>
+<div class="stop"><div class="stop-icon">🍽️</div><div><h3>16:00 · The Bison Restaurant &amp; Terrace <span class="badge fixed">已预约</span></h3><p>把晚餐提前，可以和缆车顺畅衔接，也能避免晚上再回镇里折返。</p></div></div>
+<div class="segment"><span class="mode">🚗 To Gondola</span> 约 <strong>2 km · 5 min</strong></div>
+<div class="stop"><div class="stop-icon">🚠</div><div><h3>18:10–19:30 · Banff Gondola <span class="badge fixed">已预订</span></h3><p>傍晚时段景色最好，也是今天最有“仪式感”的收尾项目。</p></div></div>
+<div class="segment"><span class="mode">🚗 Return to Canmore</span> 约 <strong>26 km · 25 min</strong></div>
+<div class="stop"><div class="stop-icon">🏨</div><div><h3>Canmore Crossing <span class="badge fixed">已预订</span></h3><p>缆车结束后直接回 Canmore，不再增加二次晚餐。</p></div></div>
+<div class="route-actions">
+<a class="btn primary" href="https://www.google.com/maps/dir/?api=1&amp;origin=Canmore+Crossing&amp;destination=Canmore+Crossing&amp;waypoints=Johnston+Canyon%7CSurprise+Corner+Viewpoint%7CBow+Falls%7CThe+Bison+Restaurant+%26+Terrace%7CBanff+Gondola&amp;travelmode=driving" target="_blank">打开 Day 6 完整路线</a>
+</div>
+</div>
+<div class="sectionhead"><h2>关键体验</h2><small>白天轻松，傍晚最精彩</small></div>
+<article class="card feature">
+<div class="image-pair">
+<img alt="Johnston Canyon" class="zoomable" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Johnston%20Canyon%20Lower%20Falls.jpg?width=1400"/>
+<img alt="Banff Gondola" class="zoomable" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Banff%20Gondola.jpg?width=1400"/>
+</div>
+<div class="caption">Johnston Canyon / Banff Gondola · 点击图片放大</div>
+<div class="feature-content">
+<div class="feature-top"><div><h3>Johnston Canyon + Banff Gondola</h3><p>前者负责轻松徒步，后者负责夕阳和全景视角。这一天的重点不是“多”，而是让 Banff 变得舒适好逛。</p></div></div>
+<div class="feature-meta"><span class="meta">🥾 低难度徒步</span><span class="meta">🌄 傍晚最佳</span><span class="meta">🛍️ 镇上最轻松的一天</span></div>
+</div>
+</article>
+<div class="sectionhead"><h2>餐厅与推荐菜</h2><small>早餐轻量，晚餐以肉类和主食为主</small></div>
+<div class="restaurant-grid">
+<article class="restaurant-card">
+<div class="restaurant-body">
+<div class="restaurant-top"><h3>One98eight</h3><span class="badge option">早餐</span></div>
+<p class="restaurant-intro">Canmore 比较舒服的早餐选择，适合今天这种不必太赶的节奏。</p>
+<div class="dish-heading">推荐 3 道</div>
+<div class="dish-list">
+<div class="dish"><span class="dish-num">1</span><div><b>Eggs Benedict</b><small>稳妥、经典、饱腹感足。</small></div></div>
+<div class="dish"><span class="dish-num">2</span><div><b>Breakfast Bowl</b><small>更适合想吃得轻一些时。</small></div></div>
+<div class="dish"><span class="dish-num">3</span><div><b>French Toast / Pancakes</b><small>如果早晨想更轻松一点，这是不错的分享项。</small></div></div>
+</div>
+</div>
+</article>
+<article class="restaurant-card">
+<div class="restaurant-body">
+<div class="restaurant-top"><div><h3>The Bison Restaurant &amp; Terrace</h3><p class="muted">16:00 · 已预约</p></div><span class="badge fixed">晚餐主选</span></div>
+<p class="restaurant-intro">Banff 很适合提前晚餐的餐厅，方便接缆车。推荐优先考虑加拿大风味和肉类主菜。</p>
+<div class="dish-heading">推荐 3 道</div>
+<div class="dish-list">
+<div class="dish"><span class="dish-num">1</span><div><b>Bison / Alberta Beef 主菜</b><small>最符合餐厅定位，也最适合作为当天主餐。</small></div></div>
+<div class="dish"><span class="dish-num">2</span><div><b>Duck / Pork 主菜</b><small>如果不想吃牛排，这类热菜通常更有层次。</small></div></div>
+<div class="dish"><span class="dish-num">3</span><div><b>Pasta / Grain Bowl</b><small>更偏主食型，适合想吃轻一点时。</small></div></div>
+</div>
+</div>
+</article>
+</div>
+</main>
+</section><section class="day" data-map="https://www.google.com/maps/dir/?api=1&amp;origin=Canmore+Crossing&amp;destination=Auberge+Vancouver+Hotel&amp;waypoints=Sicamous+Lookout%7CCostco+Wholesale+Kamloops%7CRichmond&amp;travelmode=driving" id="day7">
+<div class="hero">
+<img alt="Mountain highway" src="https://commons.wikimedia.org/wiki/Special:FilePath/Mount%20Robson%20from%20Yellowhead%20Highway.jpg?width=1800"/>
+<div class="hero-content">
+<div class="kicker">Day 7 · Wednesday · October 7</div>
+<h1>Return Drive to Vancouver</h1>
+<p>今天是纯转场回程，以“稳妥、节制、避免疲劳”为原则。早餐二选一，途中只保留必要休息和补给，晚上在 Richmond 吃一顿中餐后入住市区酒店。</p>
+<div class="route-line-top"><span>CANMORE</span><i></i><span>SICAMOUS</span><i></i><span>KAMLOOPS</span><i></i><span>RICHMOND</span><i></i><span>VANCOUVER</span></div>
+</div>
+</div>
+<main>
+<div class="card"><div class="pad">
+<div class="summary">
+<div class="summary-box"><small>当天性质</small><strong>长途回程日</strong></div>
+<div class="summary-box"><small>核心目标</small><strong>安全回到温哥华</strong></div>
+<div class="summary-box"><small>节奏</small><strong>早餐轻量 + 中途少停</strong></div>
+<div class="summary-box"><small>晚间住宿</small><strong>Auberge Vancouver Hotel</strong></div>
+</div>
+</div></div>
+<div class="booking-strip">
+<div class="booking-pill"><b>早餐</b> Eclipse / Rocky Bagel</div>
+<div class="booking-pill"><b>晚餐</b> 品一品 / 田师傅</div>
+<div class="booking-pill"><b>入住</b> Auberge Vancouver</div>
+</div>
+<div class="sectionhead" id="route7"><h2>当天路线</h2><small>今天不追求景点，重点是控制驾驶疲劳</small></div>
+<div class="card route-card">
+<div class="stop"><div class="stop-icon">🏨</div><div><h3>Canmore Crossing</h3><p>从 Canmore 退房后正式开始回程。早餐只建议二选一，不要把早晨时间拖得太长。</p></div></div>
+<div class="segment"><span class="mode">🚗 Town Drive</span> 约 <strong>2–4 km · 5–10 min</strong></div>
+<div class="stop"><div class="stop-icon">☕️</div><div><h3>Eclipse Coffee Roasters / Rocky Mountain Bagel Company</h3><p>一个偏咖啡，一个偏主食，二选一即可。今天真正重要的是尽早上路。</p></div></div>
+<div class="segment"><span class="mode">🚗 Hwy 1 West</span> 约 <strong>333 km · 3 h 45 min</strong></div>
+<div class="stop"><div class="stop-icon">📷</div><div><h3>Sicamous Lookout</h3><p>作为回程中段的轻量观景停留，适合伸展一下身体，不建议在这里安排太长休息。</p></div></div>
+<div class="segment"><span class="mode">🚗 Return Westbound</span> 约 <strong>165 km · 1 h 45 min</strong></div>
+<div class="stop"><div class="stop-icon">🛒</div><div><h3>Costco Wholesale (Kamloops)</h3><p>适合作为正式休息、补给或加油点。如果当天状态一般，也可以把这里作为最主要的中途停留。</p></div></div>
+<div class="segment"><span class="mode">🚗 Long Final Leg</span> 约 <strong>350 km · 4 h 15 min</strong></div>
+<div class="stop"><div class="stop-icon">🍲</div><div><h3>Richmond · 品一品 / 田师傅总店</h3><p>到达大温后用一顿中餐收尾。若回程晚、比较疲惫，就优先选择更顺路、更好停车的那一家。</p></div></div>
+<div class="segment"><span class="mode">🚗 Into Downtown</span> 约 <strong>15 km · 25–35 min</strong></div>
+<div class="stop"><div class="stop-icon">🏨</div><div><h3>Auberge Vancouver Hotel <span class="badge fixed">已预订</span></h3><p>晚间抵达后只办理入住和休息。今天不再安排任何 Vancouver 市区活动。</p></div></div>
+<div class="route-actions">
+<a class="btn primary" href="https://www.google.com/maps/dir/?api=1&amp;origin=Canmore+Crossing&amp;destination=Auberge+Vancouver+Hotel&amp;waypoints=Sicamous+Lookout%7CCostco+Wholesale+Kamloops%7CRichmond&amp;travelmode=driving" target="_blank">打开 Day 7 完整路线</a>
+</div>
+</div>
+<div class="sectionhead"><h2>餐厅与推荐菜</h2><small>今天以“简单实用”为第一原则</small></div>
+<div class="restaurant-grid">
+<article class="restaurant-card">
+<div class="restaurant-body">
+<div class="restaurant-top"><h3>Eclipse Coffee Roasters</h3><span class="badge option">早餐备选</span></div>
+<p class="restaurant-intro">更适合想要一杯好咖啡、轻量开局的人。</p>
+<div class="dish-heading">推荐 3 项</div>
+<div class="dish-list">
+<div class="dish"><span class="dish-num">1</span><div><b>Flat White / Latte</b><small>今天最重要的是快速提神。</small></div></div>
+<div class="dish"><span class="dish-num">2</span><div><b>Croissant / Pastry</b><small>作为轻早餐就足够。</small></div></div>
+<div class="dish"><span class="dish-num">3</span><div><b>Breakfast Toast</b><small>想再稳一些时可加一份简单主食。</small></div></div>
+</div>
+</div>
+</article>
+<article class="restaurant-card">
+<div class="restaurant-body">
+<div class="restaurant-top"><h3>Rocky Mountain Bagel Company</h3><span class="badge option">早餐备选</span></div>
+<p class="restaurant-intro">更适合想直接吃一份主食再上路的人，比单纯咖啡更饱腹。</p>
+<div class="dish-heading">推荐 3 项</div>
+<div class="dish-list">
+<div class="dish"><span class="dish-num">1</span><div><b>Lox Bagel</b><small>最有代表性的咸口选择。</small></div></div>
+<div class="dish"><span class="dish-num">2</span><div><b>Breakfast Bagel Sandwich</b><small>适合作为长途驾驶日早餐。</small></div></div>
+<div class="dish"><span class="dish-num">3</span><div><b>Cream Cheese Bagel</b><small>如果想吃得更简单，这个最稳妥。</small></div></div>
+</div>
+</div>
+</article>
+</div>
+<div class="card notice"><div class="pad">
+<h3>Day 7 提醒</h3>
+<p><strong>今天不要被“顺路还能加点什么”诱惑。</strong> 这是单纯回程日：吃早餐、控制疲劳、把大停留留给 Kamloops 或 Costco、晚上平安进 Vancouver 就是最优结果。</p>
+</div></div>
+</main>
+</section><section class="day" data-map="https://www.google.com/maps/dir/?api=1&amp;origin=Auberge+Vancouver+Hotel&amp;destination=Elisa+Vancouver&amp;waypoints=Revolver+Coffee%7CGastown+Steam+Clock%7CCF+Pacific+Centre%7CCanada+Place%7CFlyOver+in+Vancouver%7CStanley+Park%7CEnglish+Bay+Beach&amp;travelmode=driving" id="day8">
+<div class="hero">
+<img alt="Vancouver skyline" src="https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20skyline%20from%20Stanley%20Park.jpg?width=1800"/>
+<div class="hero-content">
+<div class="kicker">Day 8 · Thursday · October 8</div>
+<h1>Vancouver City Day</h1>
+<p>把 Gastown、Canada Place、FlyOver、Stanley Park 和 English Bay 串成一条经典游客线，晚上用 Elisa 收尾。这一天更像轻松的城市漫游，不需要追求打卡过多地点。</p>
+<div class="route-line-top"><span>GASTOWN</span><i></i><span>CANADA PLACE</span><i></i><span>STANLEY PARK</span><i></i><span>ENGLISH BAY</span></div>
+</div>
+</div>
+<main>
+<div class="card"><div class="pad">
+<div class="summary">
+<div class="summary-box"><small>当天性质</small><strong>Vancouver 城市漫游</strong></div>
+<div class="summary-box"><small>核心体验</small><strong>FlyOver + Stanley Park</strong></div>
+<div class="summary-box"><small>固定活动</small><strong>14:45 FlyOver / 20:00 Elisa</strong></div>
+<div class="summary-box"><small>晚间住宿</small><strong>Auberge Vancouver Hotel</strong></div>
+</div>
+</div></div>
+<div class="booking-strip">
+<div class="booking-pill"><b>14:45</b> FlyOver</div>
+<div class="booking-pill"><b>20:00</b> Elisa</div>
+<div class="booking-pill"><b>入住</b> Auberge Vancouver</div>
+</div>
+<div class="sectionhead" id="route8"><h2>当天路线</h2><small>全程以步行和短途移动为主，适合轻松逛</small></div>
+<div class="card route-card">
+<div class="stop"><div class="stop-icon">🏨</div><div><h3>Auberge Vancouver Hotel</h3><p>从酒店出发，先去 Gastown 一带喝咖啡，再逐步回到 waterfront 和 downtown 核心区。</p></div></div>
+<div class="segment"><span class="mode">🚶 / 短途驾驶</span> 约 <strong>1.5 km · 15–20 min</strong></div>
+<div class="stop"><div class="stop-icon">☕️</div><div><h3>Revolver Coffee / Nemesis Coffee Gastown</h3><p>二选一即可。Revolver 更经典，Nemesis 更偏设计感，适合用来开启 Vancouver 城市日。</p></div></div>
+<div class="segment"><span class="mode">🚶 Gastown</span> 约 <strong>500 m · 8 min</strong></div>
+<div class="stop"><div class="stop-icon">🕰️</div><div><h3>Gastown Steam Clock</h3><p>作为 Gastown 的象征性打卡点，看一眼、拍几张照就够，不需要长时间停留。</p></div></div>
+<div class="segment"><span class="mode">🚶 Downtown Core</span> 约 <strong>1.2 km · 15 min</strong></div>
+<div class="stop"><div class="stop-icon">🛍️</div><div><h3>CF Pacific Centre</h3><p>购物时长建议控制在 1–2 小时内，否则容易压缩后面的 FlyOver 和 Stanley Park 节奏。</p></div></div>
+<div class="segment"><span class="mode">🚶 Waterfront</span> 约 <strong>900 m · 12 min</strong></div>
+<div class="stop"><div class="stop-icon">⚓</div><div><h3>Canada Place</h3><p>回到水边后节奏会更舒服，适合在 FlyOver 前后顺路看海港和邮轮码头视角。</p></div></div>
+<div class="segment"><span class="mode">🚶 Waterfront</span> 约 <strong>300 m · 5 min</strong></div>
+<div class="stop"><div class="stop-icon">🎥</div><div><h3>14:45 · FlyOver in Vancouver <span class="badge fixed">已预订</span></h3><p>今天最轻松也最有游客感的固定项目。结束后直接转入 Stanley Park 就很顺。</p></div></div>
+<div class="segment"><span class="mode">🚗 / 骑行 / 步行</span> 约 <strong>5 km · 15–25 min</strong></div>
+<div class="stop"><div class="stop-icon">🌲</div><div><h3>Stanley Park</h3><p>建议把主要时间留给这里。无论是散步、看海还是单纯坐着休息，都是 Vancouver 最舒服的时段。</p></div></div>
+<div class="segment"><span class="mode">🚗 / 步行</span> 约 <strong>3 km · 10–15 min</strong></div>
+<div class="stop"><div class="stop-icon">🌅</div><div><h3>English Bay Beach</h3><p>适合作为晚餐前的海边收尾，如果天气好，傍晚氛围会非常加分。</p></div></div>
+<div class="segment"><span class="mode">🚗 To Dinner</span> 约 <strong>2 km · 10 min</strong></div>
+<div class="stop"><div class="stop-icon">🥩</div><div><h3>20:00 · Elisa <span class="badge fixed">已预约</span></h3><p>把这一天最正式的一餐放在最后，晚餐后直接回酒店即可。</p></div></div>
+<div class="segment"><span class="mode">🚗 Return</span> 约 <strong>1.5 km · 8–10 min</strong></div>
+<div class="stop"><div class="stop-icon">🏨</div><div><h3>Auberge Vancouver Hotel <span class="badge fixed">已预订</span></h3><p>回酒店后不再增加夜间活动，留给第二天返程更从容的体力。</p></div></div>
+<div class="route-actions">
+<a class="btn primary" href="https://www.google.com/maps/dir/?api=1&amp;origin=Auberge+Vancouver+Hotel&amp;destination=Elisa+Vancouver&amp;waypoints=Revolver+Coffee%7CGastown+Steam+Clock%7CCF+Pacific+Centre%7CCanada+Place%7CFlyOver+in+Vancouver%7CStanley+Park%7CEnglish+Bay+Beach&amp;travelmode=driving" target="_blank">打开 Day 8 完整路线</a>
+</div>
+</div>
+<div class="sectionhead"><h2>关键体验</h2><small>城市日的重点是舒服，而不是密集打卡</small></div>
+<article class="card feature">
+<div class="image-pair">
+<img alt="Gastown" class="zoomable" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Gastown%20Steam%20Clock%202.jpg?width=1400"/>
+<img alt="Stanley Park" class="zoomable" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20skyline%20from%20Stanley%20Park.jpg?width=1400"/>
+</div>
+<div class="caption">Gastown / Stanley Park · 点击图片放大</div>
+<div class="feature-content">
+<div class="feature-top"><div><h3>Gastown + Stanley Park</h3><p>一个代表老城区，一个代表 Vancouver 最舒服的自然城市边界。这一天只要保住 Stanley Park，整体体验就不会差。</p></div></div>
+<div class="feature-meta"><span class="meta">🕰️ 老城区</span><span class="meta">🌲 城市公园</span><span class="meta">🌅 海边日落</span></div>
+</div>
+</article>
+<div class="sectionhead"><h2>餐厅与推荐菜</h2><small>咖啡轻量，晚餐隆重</small></div>
+<div class="restaurant-grid">
+<article class="restaurant-card">
+<div class="restaurant-body">
+<div class="restaurant-top"><h3>Revolver / Nemesis</h3><span class="badge option">咖啡</span></div>
+<p class="restaurant-intro">今天早餐不需要太重，选择一杯咖啡加简单烘焙就够。真正的主餐在晚上。</p>
+<div class="dish-heading">推荐 3 项</div>
+<div class="dish-list">
+<div class="dish"><span class="dish-num">1</span><div><b>Flat White / Espresso Drink</b><small>最适合作为城市漫游的开场。</small></div></div>
+<div class="dish"><span class="dish-num">2</span><div><b>Pastry</b><small>轻量搭配，不影响中午节奏。</small></div></div>
+<div class="dish"><span class="dish-num">3</span><div><b>Sandwich / Toast</b><small>如果当天需要更实在一点的早餐，可选简单主食。</small></div></div>
+</div>
+</div>
+</article>
+<article class="restaurant-card">
+<div class="restaurant-body">
+<div class="restaurant-top"><div><h3>Elisa</h3><p class="muted">20:00 · 已预约</p></div><span class="badge fixed">晚餐主选</span></div>
+<p class="restaurant-intro">Vancouver 的代表性牛排馆之一，适合把城市日的正式晚餐放在这里。</p>
+<div class="dish-heading">推荐 3 道</div>
+<div class="dish-list">
+<div class="dish"><span class="dish-num">1</span><div><b>Dry-aged Steak</b><small>最符合 Elisa 的定位和风格。</small></div></div>
+<div class="dish"><span class="dish-num">2</span><div><b>Seafood Starter / Shellfish</b><small>如果想兼顾海鲜，先从前菜入手最合适。</small></div></div>
+<div class="dish"><span class="dish-num">3</span><div><b>Pasta / Side + Main</b><small>两个人分着点会更均衡，也更有仪式感。</small></div></div>
+</div>
+</div>
+</article>
+</div>
+</main>
+</section><section class="day" data-map="https://www.google.com/maps/dir/?api=1&amp;origin=Auberge+Vancouver+Hotel&amp;destination=Vancouver+International+Airport&amp;waypoints=Cafe+Medina&amp;travelmode=driving" id="day9">
+<div class="hero">
+<img alt="Vancouver waterfront" src="https://commons.wikimedia.org/wiki/Special:FilePath/Canada%20Place%20and%20Downtown%20Vancouver.jpg?width=1800"/>
+<div class="hero-content">
+<div class="kicker">Day 9 · Friday · October 9</div>
+<h1>Departure Day</h1>
+<p>用一顿 Cafe Medina 作为 Vancouver 最后的慢节奏早餐，然后返回机场还车、办理登机，结束这次加拿大路书。</p>
+<div class="route-line-top"><span>DOWNTOWN</span><i></i><span>CAFE MEDINA</span><i></i><span>YVR</span><i></i><span>HONG KONG</span></div>
+</div>
+</div>
+<main>
+<div class="card"><div class="pad">
+<div class="summary">
+<div class="summary-box"><small>当天性质</small><strong>轻松返程日</strong></div>
+<div class="summary-box"><small>核心体验</small><strong>最后一顿 Vancouver 早餐</strong></div>
+<div class="summary-box"><small>固定事项</small><strong>11:00 还车 / 14:10 起飞</strong></div>
+<div class="summary-box"><small>终点</small><strong>返回香港</strong></div>
+</div>
+</div></div>
+<div class="booking-strip">
+<div class="booking-pill"><b>09:00</b> Cafe Medina</div>
+<div class="booking-pill"><b>11:00</b> YVR 还车</div>
+<div class="booking-pill"><b>14:10</b> CX867</div>
+</div>
+<div class="sectionhead" id="route9"><h2>当天路线</h2><small>早餐之后不再安排任何额外项目</small></div>
+<div class="card route-card">
+<div class="stop"><div class="stop-icon">🏨</div><div><h3>Auberge Vancouver Hotel</h3><p>退房并整理好行李后，直接去吃早餐，早餐结束后就开始返机场流程。</p></div></div>
+<div class="segment"><span class="mode">🚗 Downtown</span> 约 <strong>1.5 km · 8–10 min</strong></div>
+<div class="stop"><div class="stop-icon">🍽️</div><div><h3>09:00 · Cafe Medina <span class="badge fixed">已预约</span></h3><p>作为 Vancouver 最后一顿正经早餐，节奏应以舒服为主，但也不要拖得太晚。</p></div></div>
+<div class="segment"><span class="mode">🚗 To YVR</span> 约 <strong>14 km · 25–35 min</strong></div>
+<div class="stop"><div class="stop-icon">🚗</div><div><h3>11:00 · Vancouver Airport 还车 <span class="badge fixed">已确定</span></h3><p>预留充足时间还车、搬运行李、进入航站楼和办理国际出发手续。</p></div></div>
+<div class="segment"><span class="mode">✈️ 国际航班</span> <strong>CX867 · 14:10 YVR → 19:20(+1) HKG</strong></div>
+<div class="stop"><div class="stop-icon">🛫</div><div><h3>香港返程</h3><p>完成安检和登机后，这本加拿大路书也正式结束。抵港后商务车回家即可。</p></div></div>
+<div class="route-actions">
+<a class="btn primary" href="https://www.google.com/maps/dir/?api=1&amp;origin=Auberge+Vancouver+Hotel&amp;destination=Vancouver+International+Airport&amp;waypoints=Cafe+Medina&amp;travelmode=driving" target="_blank">打开 Day 9 完整路线</a>
+</div>
+</div>
+<div class="sectionhead"><h2>餐厅与推荐菜</h2><small>把“好好吃早餐”作为最后一点仪式感</small></div>
+<div class="restaurant-grid">
+<article class="restaurant-card hero-wide">
+<div class="restaurant-body">
+<div class="restaurant-top"><div><h3>Cafe Medina</h3><p class="muted">09:00 · 已预约 · 返程早餐</p></div><span class="badge fixed">主计划</span></div>
+<p class="restaurant-intro">Vancouver 很受欢迎的 brunch 餐厅，适合作为返程前的最后一顿城市早餐。人气通常较高，预约价值很大。</p>
+<div class="dish-heading">推荐 3 道</div>
+<div class="dish-list">
+<div class="dish"><span class="dish-num">1</span><div><b>Tagine / Brunch Plate</b><small>更像完整主餐，最有满足感。</small></div></div>
+<div class="dish"><span class="dish-num">2</span><div><b>Waffles + Toppings</b><small>这是 Cafe Medina 的代表方向之一，适合两人分享。</small></div></div>
+<div class="dish"><span class="dish-num">3</span><div><b>Eggs / Sausage 主食组合</b><small>如果想吃得更传统更稳妥，可以选择这类早餐盘。</small></div></div>
+</div>
+</div>
+</article>
+</div>
+<div class="card notice"><div class="pad">
+<h3>Day 9 提醒</h3>
+<p><strong>早餐之后不再安排额外城市活动。</strong> 返程日最怕的不是无聊，而是节奏被打乱。把时间留给还车、搬行李和国际出发流程，会更从容。</p>
+</div></div>
+</main>
+</section><div class="footer">Percy’s Canada Roadbook · Full Edition v3.0<br/>距离与车程均为近似值；以出发当天实时地图、天气和道路公告为准。</div>
 <nav class="bottomnav">
 <button class="active" data-action="top"><span>⌂</span>页首</button>
-<button data-action="route"><span>↗</span>路线</button>
-<button data-action="maps"><span>⌖</span>地图</button>
+<button class="" data-action="route"><span>↗</span>路线</button>
+<button class="" data-action="maps"><span>⌖</span>地图</button>
 </nav>
 </div>
 <div class="lightbox" id="lightbox"><button aria-label="Close">×</button><img alt="Expanded view"/></div>
+
+
 <script>
 (()=>{
-  const PASSWORD='PercyChen318', ACCESS='roadbook_access_until_v26';
+  const PASSWORD='PercyChen318', ACCESS='roadbook_access_until_v30';
   const gate=document.getElementById('gate'), input=document.getElementById('password'), error=document.getElementById('gateError');
   function unlock(){localStorage.setItem(ACCESS,String(Date.now()+30*24*60*60*1000));gate.classList.add('hidden')}
   if(Number(localStorage.getItem(ACCESS)||0)>Date.now()) gate.classList.add('hidden');
@@ -582,21 +1140,35 @@
 
   let active='day1';
   const tabs=[...document.querySelectorAll('.daytab')], days=[...document.querySelectorAll('.day')];
-  function switchDay(id){active=id;tabs.forEach(t=>t.classList.toggle('active',t.dataset.day===id));days.forEach(d=>d.classList.toggle('active',d.id===id));window.scrollTo({top:0,behavior:'smooth'})}
+  function getSection(){return document.getElementById(active)}
+  function switchDay(id){
+    active=id;
+    tabs.forEach(t=>t.classList.toggle('active',t.dataset.day===id));
+    days.forEach(d=>d.classList.toggle('active',d.id===id));
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
   tabs.forEach(t=>t.onclick=()=>switchDay(t.dataset.day));
 
   document.querySelectorAll('.bottomnav button').forEach(btn=>btn.onclick=()=>{
-    document.querySelectorAll('.bottomnav button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
-    if(btn.dataset.action==='top')window.scrollTo({top:0,behavior:'smooth'});
-    if(btn.dataset.action==='route')document.getElementById(active==='day1'?'route1':'route2').scrollIntoView({behavior:'smooth',block:'start'});
+    document.querySelectorAll('.bottomnav button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const section=getSection();
+    if(btn.dataset.action==='top') window.scrollTo({top:0,behavior:'smooth'});
+    if(btn.dataset.action==='route'){
+      const target=section.querySelector('.sectionhead[id^="route"]');
+      if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+    }
     if(btn.dataset.action==='maps'){
-      const url=active==='day1'?'https://www.google.com/maps/dir/?api=1&origin=Seattle-Tacoma+International+Airport&destination=Argosy+Cruises+Pier+55&waypoints=Pike+Place+Market&travelmode=driving':'https://www.google.com/maps/dir/?api=1&origin=SIXT+Vancouver+Airport+4440+Cowley+Crescent&destination=Patricia+Lake+Bungalows&waypoints=T%26T+Supermarket+Lansdowne+Store%7CLittle+Beetle+Chilliwack&travelmode=driving';
-      window.open(url,'_blank');
+      const url=section.dataset.map;
+      if(url) window.open(url,'_blank');
     }
   });
 
   const lb=document.getElementById('lightbox'), lbimg=lb.querySelector('img');
-  document.querySelectorAll('.zoomable').forEach(img=>img.onclick=()=>{lbimg.src=img.src.replace('width=1300','width=2400').replace('width=1700','width=2400');lb.classList.add('show')});
+  document.querySelectorAll('.zoomable').forEach(img=>img.onclick=()=>{
+    lbimg.src=img.src.replace('width=1300','width=2400').replace('width=1400','width=2400').replace('width=1700','width=2400').replace('width=1800','width=2400');
+    lb.classList.add('show');
+  });
   lb.onclick=e=>{if(e.target===lb||e.target.tagName==='BUTTON')lb.classList.remove('show')};
 
   if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});

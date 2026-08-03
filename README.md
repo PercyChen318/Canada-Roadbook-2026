@@ -1,10 +1,17 @@
-# Percy’s Canada Roadbook 2026 — Day 1–2 v2.6
+# Canada Roadbook 2026 — Full Edition v3.0
 
-## 本版调整
-- Day 2 的自驾路线改回 Day 1 同款的 `route-card` 风格。
-- 每一段继续保留“从哪里到哪里”、距离、时间和停留目的。
-- 山区重点提醒调整为更柔和的配色。
-- 在深色模式下，提醒卡片背景和边框进一步降低对比度，减少刺眼感。
-- 仍然没有 assets 文件夹，适合手机覆盖上传。
+完整的手机端 HTML 路书，包含 Day 1–Day 9。
 
-访问密码：`PercyChen318`
+## 主要特点
+- 延续 Day 1 / Day 2 已确认的视觉风格
+- 所有天数都可在同一手机网页中切换
+- 继续保留密码访问：`PercyChen318`
+- 无 assets 文件夹，适合手机直接覆盖上传到 GitHub 仓库根目录
+
+## 上传文件
+将以下文件全部上传 / 覆盖到 GitHub Pages 仓库根目录：
+- index.html
+- manifest.webmanifest
+- icon.svg
+- sw.js
+- .nojekyll
