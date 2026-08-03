@@ -186,6 +186,28 @@
       .journey-point{padding:15px}
       .journey-band{align-items:flex-start}
     }
+
+    /* v2.6 — unify Day 2 route style + softer reminder palette */
+    .reminder-card{
+      background:linear-gradient(145deg,#f6f7f7,#f0f3f4);
+      border-left:5px solid #7a8f98;
+    }
+    .reminder-item{
+      background:rgba(255,255,255,.82);
+      border:1px solid rgba(103,113,122,.12);
+    }
+    .reminder-item b{color:var(--ink)}
+    @media(prefers-color-scheme:dark){
+      .reminder-card{
+        background:linear-gradient(145deg,#1c252c,#202b33);
+        border-left-color:#668391;
+      }
+      .reminder-item{
+        background:rgba(255,255,255,.04);
+        border-color:rgba(182,196,205,.12);
+      }
+      .reminder-item span{color:#bcc6cc}
+    }
 </style>
 </head>
 <body>
@@ -392,98 +414,99 @@
 </div>
 </div>
 <!-- 4. Combined route and segments -->
-<div class="sectionhead" id="route2"><h2>自驾路线</h2><small>每个框都是一段完整的“从哪里到哪里”</small></div>
-<div class="journey-list">
-<article class="journey-card">
-<div class="journey-point">
-<div class="journey-icon">🏨</div>
-<div><small>出发</small><h3>The Westin Wall Centre</h3><p>退房后乘酒店免费机场班车前往 YVR 主航站楼。行李较多，建议直接使用酒店班车，不另行叫车。</p></div>
+<div class="sectionhead" id="route2">
+<h2>当天路线</h2>
+<small>沿用 Day 1 的路线展示风格</small>
 </div>
-<div class="journey-band"><span>🚌 酒店 Shuttle Bus</span><strong>约 10–15 min</strong></div>
-<div class="journey-point">
-<div class="journey-icon">✈️</div>
-<div><small>抵达</small><h3>YVR Main Terminal · Departures Level 3</h3><p>到达后前往 Door 16 外 Courtesy Shuttle Area，准备转乘前往 SIXT South Terminal 的接驳车。</p>
-<div class="journey-notes"><em>行李随身照看</em><em>不进入安检区</em></div></div>
+<div class="card route-card">
+<div class="stop">
+<div class="stop-icon">🏨</div>
+<div>
+<h3>The Westin Wall Centre, Vancouver Airport</h3>
+<p>从酒店出发，先乘免费机场班车前往 YVR 主航站楼，再转乘 SIXT / South Terminal 接驳。</p>
 </div>
-</article>
-<article class="journey-card">
-<div class="journey-point">
-<div class="journey-icon">✈️</div>
-<div><small>出发</small><h3>YVR Main Terminal · Door 16</h3><p>可拨现场电话联系 SIXT，或乘 A1 South Terminal / SIXT 接驳。出发前再次确认上车位置。</p></div>
 </div>
-<div class="journey-band"><span>🚌 Courtesy Shuttle</span><strong>约 11–13 min</strong></div>
-<div class="journey-point">
-<div class="journey-icon">🚙</div>
-<div><small>固定项目 · 10:00</small><h3>SIXT Vancouver Airport</h3><p>领取 Audi Q5 AWD。重点确认 AWD、轮胎标识、车身划痕、玻璃与轮胎情况，并拍照记录仪表盘和油量。</p>
-<div class="journey-notes"><em>已预订</em><em>0 免赔</em><em>确认冬季胎</em></div>
-<div class="journey-actions"><a href="https://maps.apple.com/?q=SIXT%20Vancouver%20Airport%204440%20Cowley%20Crescent" target="_blank">Apple Maps</a></div></div>
+<div class="segment">
+<span class="mode">🚌 酒店班车</span>
+    约 <strong>5 km · 10–15 min</strong>
 </div>
-</article>
-<article class="journey-card">
-<div class="journey-point">
-<div class="journey-icon">🚙</div>
-<div><small>出发</small><h3>SIXT Vancouver Airport</h3><p>完成验车后正式开始自驾。先在 Richmond 市区完成必要补给，再进入 Highway 1 长途路段。</p></div>
+<div class="stop">
+<div class="stop-icon">✈️</div>
+<div>
+<h3>YVR Main Terminal · Door 16</h3>
+<p>到达后前往 Courtesy Shuttle Area，准备乘接驳前往 SIXT Vancouver Airport。</p>
 </div>
-<div class="journey-band"><span>🚗 市区道路</span><strong>约 7 km · 12–18 min</strong></div>
-<div class="journey-point">
-<div class="journey-icon">🛒</div>
-<div><small>顺路补给</small><h3>T&amp;T Supermarket Lansdowne Store</h3><p>主要购买饮用水、早餐、零食和长途驾驶补给。建议提前列清单，快速完成，不安排完整逛街。</p>
-<div class="journey-notes"><em>控制停留时间</em><em>补水和零食</em><em>出发前检查油量</em></div>
-<div class="journey-actions"><a href="https://maps.apple.com/?q=T%26T%20Supermarket%20Lansdowne%20Store" target="_blank">Apple Maps</a></div></div>
 </div>
-</article>
-<article class="journey-card optional-card">
-<div class="journey-point">
-<div class="journey-icon">🛒</div>
-<div><small>出发</small><h3>T&amp;T Lansdowne</h3><p>离开 Richmond 后沿 Highway 1 穿过大温地区和 Fraser Valley。大温交通会影响这一段的实际用时。</p></div>
+<div class="segment">
+<span class="mode">🚌 Courtesy Shuttle</span>
+    约 <strong>5 km · 11–13 min</strong>
 </div>
-<div class="journey-band"><span>🚗 Hwy 1 East</span><strong>约 105 km · 约 1 h 25 min</strong></div>
-<div class="journey-point">
-<div class="journey-icon">☕️</div>
-<div><small>可选停留</small><h3>Little Beetle · Chilliwack</h3><p>适合作为咖啡或简单休息。若取车、购物或市区交通稍慢，直接跳过，改在 Hope 或 Kamloops 休息会更稳妥。</p>
-<div class="journey-notes"><em>看进度决定</em><em>咖啡 / 简餐</em><em>可直接跳过</em></div>
-<div class="journey-actions"><a href="https://maps.apple.com/?q=Little%20Beetle%20Chilliwack" target="_blank">Apple Maps</a></div></div>
+<div class="stop">
+<div class="stop-icon">🚙</div>
+<div>
+<h3>10:00 · SIXT Vancouver Airport <span class="badge fixed">已预订</span></h3>
+<p>领取 Audi Q5 AWD。重点确认 AWD、轮胎标识、玻璃 / 轮胎状况，并拍照记录油量和车身划痕。</p>
 </div>
-</article>
-<article class="journey-card">
-<div class="journey-point">
-<div class="journey-icon">☕️</div>
-<div><small>出发</small><h3>Chilliwack / Hope</h3><p>无论是否停 Little Beetle，都建议在 Hope 前确认油量、天气和驾驶状态，随后进入 Coquihalla 山区高速。</p></div>
 </div>
-<div class="journey-band"><span>🚗 Hwy 1 → Hwy 5</span><strong>约 285 km · 约 3 h</strong></div>
-<div class="journey-point">
-<div class="journey-icon">🏙️</div>
-<div><small>主要休息节点</small><h3>Kamloops</h3><p>适合作为咖啡或简单休息。若取车、购物或市区交通稍慢，直接跳过，改在 Hope 或 Kamloops 休息会更稳妥。</p>
-<div class="journey-notes"><em>主加油点</em><em>正式休息</em><em>简餐</em></div>
-<div class="journey-actions"><a href="https://maps.apple.com/?q=Kamloops%20BC" target="_blank">Apple Maps</a></div></div>
+<div class="segment">
+<span class="mode">🚗 市区驾驶</span>
+    约 <strong>7 km · 12–18 min</strong>
 </div>
-</article>
-<article class="journey-card">
-<div class="journey-point">
-<div class="journey-icon">🏙️</div>
-<div><small>出发</small><h3>Kamloops</h3><p>离开 Kamloops 后沿 Highway 5 持续北上。道路逐渐安静，建议每 1.5–2 小时根据状态短暂停车活动。</p></div>
+<div class="stop">
+<div class="stop-icon">🛒</div>
+<div>
+<h3>T&amp;T Supermarket Lansdowne Store</h3>
+<p>顺路补给：购买饮用水、零食、早餐和长途驾驶用品。尽量快速完成，不安排完整购物。</p>
 </div>
-<div class="journey-band"><span>🚗 Hwy 5 North</span><strong>约 320 km · 约 3 h 40 min</strong></div>
-<div class="journey-point">
-<div class="journey-icon">🏔️</div>
-<div><small>山前节点</small><h3>Valemount</h3><p>途中可在 Clearwater 或 Blue River 二选一短停。Valemount 是进入 Mount Robson 和 Jasper 前最后一个舒服的补给点，可视油量再补一次。</p>
-<div class="journey-notes"><em>最后补给</em><em>洗手间</em><em>不安排景点</em></div>
-<div class="journey-actions"><a href="https://maps.apple.com/?q=Valemount%20BC" target="_blank">Apple Maps</a></div></div>
 </div>
-</article>
-<article class="journey-card">
-<div class="journey-point">
-<div class="journey-icon">🏔️</div>
-<div><small>出发</small><h3>Valemount</h3><p>最后一段经 Mount Robson 区域进入 Alberta。天色变暗时降低车速，特别留意道路两侧的鹿和其他野生动物。</p></div>
+<div class="segment">
+<span class="mode">🚗 Hwy 1 East</span>
+    约 <strong>105 km · 约 1 h 25 min</strong>
 </div>
-<div class="journey-band"><span>🚗 Hwy 16 East</span><strong>约 125 km · 约 1 h 30 min</strong></div>
-<div class="journey-point">
-<div class="journey-icon">🏨</div>
-<div><small>当日终点</small><h3>Patricia Lake Bungalows</h3><p>抵达后只安排入住、整理行李和休息，不再增加湖边散步或其他活动，为 Day 3 保留体力。</p>
-<div class="journey-notes"><em>已预订</em><em>直接入住</em><em>夜间留意野生动物</em></div>
-<div class="journey-actions"><a href="https://maps.apple.com/?q=Patricia%20Lake%20Bungalows" target="_blank">Apple Maps</a><a href="https://www.patricialakebungalows.com/" target="_blank">酒店官网</a></div></div>
+<div class="stop">
+<div class="stop-icon">☕️</div>
+<div>
+<h3>Little Beetle · Chilliwack <span class="badge option">可选</span></h3>
+<p>适合作为咖啡或简单休息。若取车、购物或大温交通稍慢，直接跳过，改在 Hope 或 Kamloops 休息会更稳妥。</p>
 </div>
-</article>
+</div>
+<div class="segment">
+<span class="mode">🚗 Hwy 1 → Hwy 5</span>
+    约 <strong>285 km · 约 3 h</strong>
+</div>
+<div class="stop">
+<div class="stop-icon">⛽</div>
+<div>
+<h3>Kamloops</h3>
+<p>当天最重要的正式休息点：加满油、使用洗手间、简单用餐并活动身体。之后北上的补给点会更分散。</p>
+</div>
+</div>
+<div class="segment">
+<span class="mode">🚗 Hwy 5 North</span>
+    约 <strong>320 km · 约 3 h 40 min</strong>
+</div>
+<div class="stop">
+<div class="stop-icon">🏔️</div>
+<div>
+<h3>Valemount</h3>
+<p>进入 Mount Robson 和 Jasper 前的最后补给点。可视油量与状态选择补油、洗手间和短暂活动，不安排景点。</p>
+</div>
+</div>
+<div class="segment">
+<span class="mode">🚗 Hwy 16 East</span>
+    约 <strong>125 km · 约 1 h 30 min</strong>
+</div>
+<div class="stop">
+<div class="stop-icon">🏨</div>
+<div>
+<h3>Patricia Lake Bungalows <span class="badge fixed">已预订</span></h3>
+<p>当天终点。抵达后只安排入住和休息，不再额外加行程，为 Day 3 的 Jasper 游览保留体力。</p>
+</div>
+</div>
+<div class="route-actions">
+<a class="btn primary" href="https://www.google.com/maps/dir/?api=1&amp;origin=SIXT+Vancouver+Airport+4440+Cowley+Crescent&amp;destination=Patricia+Lake+Bungalows&amp;waypoints=T%26T+Supermarket+Lansdowne+Store%7CLittle+Beetle+Chilliwack%7CKamloops%7CValemount&amp;travelmode=driving" target="_blank">打开 Day 2 完整路线</a>
+<a class="btn" href="https://maps.apple.com/?q=Kamloops%20BC" target="_blank">打开 Kamloops</a>
+</div>
 </div>
 <!-- 5. Restaurant (no images) -->
 <div class="sectionhead"><h2>途中用餐</h2><small>Little Beetle 是可选停留，不影响稳妥主线</small></div>
@@ -539,7 +562,7 @@
 </div></div>
 </main>
 </section>
-<div class="footer">Percy’s Canada Roadbook · Prototype v2.5<br/>距离与车程均为近似值，出发当天以实时地图、天气和道路公告为准。</div>
+<div class="footer">Percy’s Canada Roadbook · Prototype v2.6<br/>距离与车程均为近似值，出发当天以实时地图、天气和道路公告为准。</div>
 <nav class="bottomnav">
 <button class="active" data-action="top"><span>⌂</span>页首</button>
 <button data-action="route"><span>↗</span>路线</button>
@@ -549,7 +572,7 @@
 <div class="lightbox" id="lightbox"><button aria-label="Close">×</button><img alt="Expanded view"/></div>
 <script>
 (()=>{
-  const PASSWORD='PercyChen318', ACCESS='roadbook_access_until_v25';
+  const PASSWORD='PercyChen318', ACCESS='roadbook_access_until_v26';
   const gate=document.getElementById('gate'), input=document.getElementById('password'), error=document.getElementById('gateError');
   function unlock(){localStorage.setItem(ACCESS,String(Date.now()+30*24*60*60*1000));gate.classList.add('hidden')}
   if(Number(localStorage.getItem(ACCESS)||0)>Date.now()) gate.classList.add('hidden');
