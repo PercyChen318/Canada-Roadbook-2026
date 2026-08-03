@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#13233a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="加西路书" />
+  <title>10月1日路书｜香港—西雅图—温哥华</title>
+  <style>
+    :root{
+      --bg:#f4f1e9;
+      --paper:#fffdf7;
+      --ink:#18202b;
+      --muted:#6c7480;
+      --navy:#13233a;
+      --blue:#326a91;
+      --teal:#2f746e;
+      --amber:#b66d20;
+      --red:#a8473d;
+      --line:#dcd7cd;
+      --soft:#ece8df;
+      --shadow:0 10px 28px rgba(20,31,45,.10);
+      --radius:20px;
+      --safe-bottom:max(14px, env(safe-area-inset-bottom));
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 15% -10%, rgba(50,106,145,.18), transparent 34%),
+        radial-gradient(circle at 100% 8%, rgba(182,109,32,.13), transparent 28%),
+        var(--bg);
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    button,a,input,textarea{font:inherit}
+    button,a{-webkit-tap-highlight-color:transparent}
+    a{color:inherit;text-decoration:none}
+    .app{max-width:760px;margin:0 auto;padding-bottom:104px}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:calc(22px + env(safe-area-inset-top)) 20px 24px;
+      color:#fff;
+      background:
+        linear-gradient(145deg,rgba(19,35,58,.98),rgba(35,78,105,.94)),
+        var(--navy);
+      border-radius:0 0 30px 30px;
+      box-shadow:var(--shadow);
+    }
+    .hero:after{
+      content:"";
+      position:absolute;right:-45px;top:-50px;width:190px;height:190px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.12);box-shadow:0 0 0 26px rgba(255,255,255,.035),0 0 0 52px rgba(255,255,255,.025)
+    }
+    .eyebrow{font-size:12px;letter-spacing:.13em;text-transform:uppercase;opacity:.75;font-weight:700}
+    h1{margin:8px 0 4px;font-size:28px;line-height:1.14;letter-spacing:-.02em}
+    .subtitle{font-size:14px;opacity:.82}
+    .route{
+      display:grid;grid-template-columns:auto 1fr auto 1fr auto;align-items:center;gap:8px;
+      margin:22px 0 18px
+    }
+    .city strong{display:block;font-size:16px}.city small{font-size:11px;opacity:.7}
+    .route-line{height:1px;background:rgba(255,255,255,.42);position:relative}
+    .route-line:after{content:"✈";position:absolute;left:50%;top:50%;transform:translate(-50%,-54%);font-size:13px;background:#23465f;padding:0 5px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:10px}
+    .hero-stat{padding:12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);border-radius:15px}
+    .hero-stat small{display:block;font-size:11px;opacity:.72;margin-bottom:4px}
+    .hero-stat strong{font-size:14px}
+    .progress-wrap{margin-top:14px}
+    .progress-meta{display:flex;justify-content:space-between;font-size:11px;opacity:.8;margin-bottom:6px}
+    .progress{height:7px;border-radius:99px;background:rgba(255,255,255,.14);overflow:hidden}
+    .progress span{display:block;height:100%;width:0;background:#fff;border-radius:99px;transition:.3s}
+    main{padding:18px 14px}
+    .section{display:none}.section.active{display:block}
+    .card{
+      background:rgba(255,253,247,.96);
+      border:1px solid rgba(117,106,91,.16);
+      border-radius:var(--radius);
+      box-shadow:0 8px 22px rgba(36,46,58,.065);
+      margin-bottom:14px;
+      overflow:hidden;
+    }
+    .card-pad{padding:17px}
+    .section-title{display:flex;align-items:center;justify-content:space-between;margin:5px 3px 12px}
+    .section-title h2{font-size:18px;margin:0}
+    .section-title small{color:var(--muted)}
+    .pill-row{display:flex;gap:8px;overflow-x:auto;padding:2px 0 4px;scrollbar-width:none}
+    .pill-row::-webkit-scrollbar{display:none}
+    .pill{
+      flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:999px;
+      padding:9px 13px;font-size:13px;font-weight:650;color:#46505d
+    }
+    .pill.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .alert{border-left:4px solid var(--amber)}
+    .alert h3{margin:0 0 8px;font-size:16px}
+    .alert p{margin:0;color:#4f5966;font-size:13px;line-height:1.6}
+    .alert strong{color:var(--ink)}
+    .decision{
+      display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px
+    }
+    .decision button{
+      border:1px solid var(--line);background:#fff;padding:12px;border-radius:14px;text-align:left;color:var(--ink)
+    }
+    .decision button.active{border-color:var(--blue);box-shadow:0 0 0 2px rgba(50,106,145,.14)}
+    .decision b{display:block;font-size:13px}.decision span{display:block;font-size:11px;color:var(--muted);margin-top:3px}
+    .next-card{color:#fff;background:linear-gradient(145deg,#2f746e,#285f6e);border:0}
+    .next-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+    .next-title{font-size:20px;font-weight:750;margin:6px 0}
+    .next-detail{font-size:13px;opacity:.82;line-height:1.5}
+    .timeline{padding:3px 0 3px 0}
+    .event{
+      display:grid;grid-template-columns:48px 24px 1fr;gap:8px;
+      position:relative;padding:0 14px
+    }
+    .event:not(:last-child) .track:after{
+      content:"";position:absolute;left:50%;top:25px;bottom:-8px;width:1px;background:var(--line);transform:translateX(-50%)
+    }
+    .time{font-size:12px;font-weight:750;color:#4f5966;text-align:right;padding-top:18px;font-variant-numeric:tabular-nums}
+    .track{position:relative;padding-top:17px}
+    .dot{width:13px;height:13px;border-radius:50%;background:var(--paper);border:3px solid var(--blue);margin:auto;position:relative;z-index:2}
+    .event.done .dot{background:var(--teal);border-color:var(--teal)}
+    .event.optional .dot{border-style:dashed;border-color:var(--amber)}
+    .event-content{padding:12px 0 16px;border-bottom:1px solid rgba(220,215,205,.72)}
+    .event:last-child .event-content{border-bottom:0}
+    .event-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+    .event h3{font-size:15px;margin:0;line-height:1.35}
+    .tag{
+      flex:0 0 auto;font-size:10px;font-weight:750;padding:4px 7px;border-radius:999px;
+      background:var(--soft);color:#5e6570
+    }
+    .tag.booked{background:#e3f0e8;color:#286149}
+    .tag.tight{background:#f8e2dc;color:#8b3d34}
+    .tag.option{background:#f7ead6;color:#80541d}
+    .event p{font-size:12px;color:var(--muted);line-height:1.55;margin:6px 0 9px}
+    .actions{display:flex;gap:7px;flex-wrap:wrap}
+    .action{
+      border:1px solid var(--line);background:#fff;color:#394452;
+      border-radius:10px;padding:7px 9px;font-size:11px;font-weight:650
+    }
+    .check{
+      display:inline-flex;align-items:center;gap:6px;border:0;background:#edf3f1;color:#286056
+    }
+    .check.done{background:var(--teal);color:#fff}
+    .mini-note{display:none;margin-top:8px}
+    .mini-note.show{display:block}
+    textarea{
+      width:100%;min-height:78px;resize:vertical;border:1px solid var(--line);border-radius:12px;
+      padding:11px;background:#fffdf9;color:var(--ink);outline:none
+    }
+    textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(50,106,145,.10)}
+    .logic-list{display:grid;gap:10px}
+    .logic-item{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start}
+    .logic-icon{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:var(--soft)}
+    .logic-item b{font-size:13px}.logic-item p{font-size:12px;color:var(--muted);line-height:1.55;margin:3px 0 0}
+    .booking{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+    .booking:last-child{border-bottom:0}
+    .booking-icon{width:42px;height:42px;flex:0 0 auto;border-radius:13px;background:var(--soft);display:grid;place-items:center;font-size:20px}
+    .booking h3{margin:0;font-size:14px}.booking p{font-size:12px;color:var(--muted);margin:4px 0 8px;line-height:1.45}
+    .booking-links{display:flex;gap:7px;flex-wrap:wrap}
+    .source-link{font-size:11px;font-weight:700;color:var(--blue);padding:6px 8px;border-radius:9px;background:#edf4f8}
+    .notes-grid{display:grid;gap:12px}
+    .field label{display:block;font-size:12px;font-weight:700;margin:0 0 6px}
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .primary,.secondary,.danger{
+      border:0;border-radius:12px;padding:10px 13px;font-size:12px;font-weight:750
+    }
+    .primary{background:var(--navy);color:white}
+    .secondary{background:var(--soft);color:#3d4651}
+    .danger{background:#f7e6e2;color:#8a3d35}
+    .bottom-nav{
+      position:fixed;z-index:20;left:50%;bottom:0;transform:translateX(-50%);
+      width:min(760px,100%);padding:8px 10px var(--safe-bottom);
+      background:rgba(255,253,247,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+      border-top:1px solid rgba(120,110,95,.18);
+      display:grid;grid-template-columns:repeat(4,1fr);gap:4px
+    }
+    .nav-btn{
+      border:0;background:transparent;color:#737b86;border-radius:12px;padding:7px 3px 5px;
+      font-size:10px;font-weight:650
+    }
+    .nav-btn span{display:block;font-size:20px;line-height:1.1;margin-bottom:2px}
+    .nav-btn.active{color:var(--navy);background:#eceff1}
+    .toast{
+      position:fixed;z-index:30;left:50%;bottom:90px;transform:translate(-50%,14px);
+      opacity:0;pointer-events:none;background:#172233;color:#fff;border-radius:999px;
+      padding:10px 14px;font-size:12px;transition:.25s;white-space:nowrap;max-width:92vw
+    }
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    .muted{color:var(--muted)}
+    .hidden{display:none!important}
+    .footnote{font-size:11px;color:var(--muted);line-height:1.6;margin:8px 2px 0}
+    @media (min-width:640px){
+      main{padding:22px}
+      .hero{padding-left:28px;padding-right:28px}
+      h1{font-size:34px}
+    }
+    @media (prefers-color-scheme:dark){
+      :root{--bg:#111820;--paper:#19222c;--ink:#eef2f5;--muted:#aeb7c1;--line:#34404c;--soft:#26323d;--shadow:none}
+      body{background:var(--bg)}
+      .card{background:rgba(25,34,44,.98);border-color:#303b46}
+      .pill,.decision button,.action,textarea{background:#202b36;color:var(--ink)}
+      .check{background:#233d3a}
+      .source-link{background:#243744}
+      .bottom-nav{background:rgba(25,34,44,.94);border-color:#34404c}
+      .nav-btn.active{background:#2a3642;color:#fff}
+      .event-content{border-color:#34404c}
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="hero">
+    <div class="eyebrow">Canada Roadbook · Day 1</div>
+    <h1>香港 → 西雅图 → 温哥华</h1>
+    <div class="subtitle">2026年10月1日 · Thursday · 跨越国际日期变更线</div>
+
+    <div class="route" aria-label="Travel route">
+      <div class="city"><strong>HKG</strong><small>UTC+8</small></div>
+      <div class="route-line"></div>
+      <div class="city"><strong>SEA</strong><small>UTC−7</small></div>
+      <div class="route-line"></div>
+      <div class="city"><strong>YVR</strong><small>UTC−7</small></div>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-stat"><small>关键体验</small><strong>14:45 Harbor Cruise</strong></div>
+      <div class="hero-stat"><small>晚间住宿</small><strong>Westin Wall Centre</strong></div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-meta"><span>当天进度</span><span id="progressText">0 / 0</span></div>
+      <div class="progress"><span id="progressBar"></span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section active" id="today">
+      <div class="card alert">
+        <div class="card-pad">
+          <h3>当天衔接判断：可执行，但必须控制午餐时间</h3>
+          <p>
+            <strong>13:00 Matt’s + 14:45 游船</strong>可以同时保留，但建议最晚
+            <strong>14:10结账、14:15离店、14:25抵达 Pier 55</strong>。
+            若入境后到达 Pike Place 已晚于 12:35，页面下方可一键切换为“游船优先”的轻松方案。
+          </p>
+          <div class="decision">
+            <button class="plan-switch active" data-plan="tight">
+              <b>Plan A · 全部保留</b><span>Matt’s + Harbor Cruise</span>
+            </button>
+            <button class="plan-switch" data-plan="relaxed">
+              <b>Plan B · 游船优先</b><span>取消正餐，市场轻食</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-pad">
+          <div class="section-title" style="margin-top:0">
+            <h2>机场到市区</h2><small>二选一</small>
+          </div>
+          <div class="pill-row">
+            <button class="pill transfer-switch active" data-transfer="uber">Uber · 节省时间</button>
+            <button class="pill transfer-switch" data-transfer="rail">Link 1 Line · 更稳定</button>
+          </div>
+          <p id="transferHint" class="footnote">推荐到达层直接叫车；若道路拥堵明显，再切换轻轨。地图按钮会打开对应路线。</p>
+        </div>
+      </div>
+
+      <div class="card next-card">
+        <div class="card-pad">
+          <div class="next-label">NEXT UP · 下一个未完成项目</div>
+          <div class="next-title" id="nextTitle">载入中…</div>
+          <div class="next-detail" id="nextDetail"></div>
+        </div>
+      </div>
+
+      <div class="section-title"><h2>时间轴</h2><small id="planLabel">Plan A</small></div>
+      <div class="card">
+        <div class="timeline" id="timeline"></div>
+      </div>
+
+      <div class="section-title"><h2>关键逻辑</h2><small>旅行中快速判断</small></div>
+      <div class="card"><div class="card-pad logic-list">
+        <div class="logic-item">
+          <div class="logic-icon">🛂</div>
+          <div><b>国际到达不是“落地即出发”</b><p>SEA 国际到达需先取托运行李、办理入境及海关手续，再按行李是否直挂处理转运行李。建议把 10:05—11:30 视为基础缓冲，而不是市区游览时间。</p></div>
+        </div>
+        <div class="logic-item">
+          <div class="logic-icon">🍽️</div>
+          <div><b>Luke’s 与 Matt’s 不宜都当作完整午餐</b><p>Plan A 中 Luke’s 仅作为备选或极小份尝鲜；否则会影响 13:00 正餐和 14:45 游船。</p></div>
+        </div>
+        <div class="logic-item">
+          <div class="logic-icon">⛴️</div>
+          <div><b>游船按 14:25 抵达码头规划</b><p>Harbor Cruise 航程约 1 小时，Pier 55 登船。建议预留约 20 分钟办理登船及选座。</p></div>
+        </div>
+        <div class="logic-item">
+          <div class="logic-icon">✈️</div>
+          <div><b>15:45 下船后不再安排咖啡</b><p>直接步行前往 Symphony Station，目标 17:05—17:15 回到 SEA，给 19:20 航班保留安检、步行及意外缓冲。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="plan">
+      <div class="section-title"><h2>方案对比</h2><small>根据入境速度切换</small></div>
+      <div class="card"><div class="card-pad">
+        <h3 style="margin:0 0 8px;font-size:16px">Plan A · 全部保留</h3>
+        <p class="muted" style="font-size:13px;line-height:1.65;margin:0">
+          适合 12:20 前到达 Pike Place 一带。先快速看市场，13:00 准时入座 Matt’s；
+          14:10 前结账，随后下行至 Pier 55。优点是体验完整，缺点是午餐必须严格控时。
+        </p>
+      </div></div>
+      <div class="card"><div class="card-pad">
+        <h3 style="margin:0 0 8px;font-size:16px">Plan B · 游船优先</h3>
+        <p class="muted" style="font-size:13px;line-height:1.65;margin:0">
+          适合 12:35 后才到市区，或入境过程较疲劳。取消 Matt’s，
+          在 Piroshky / Luke’s 选择一处快速吃，保留市场、Overlook Walk 和 Harbor Cruise，
+          整体更稳妥。
+        </p>
+      </div></div>
+      <div class="card alert"><div class="card-pad">
+        <h3>现场切换规则</h3>
+        <p><strong>12:35 是判断线：</strong>若此时仍未抵达 Pike Place，直接切换 Plan B；若航班延误或 13:20 后才到市区，则建议连游船也重新评估。</p>
+      </div></div>
+    </section>
+
+    <section class="section" id="bookings">
+      <div class="section-title"><h2>预订中心</h2><small>集中查看</small></div>
+      <div class="card"><div class="card-pad">
+        <div class="booking">
+          <div class="booking-icon">✈️</div>
+          <div><h3>CX852 · HKG → SEA</h3><p>13:25 起飞 · 10:05 抵达（同日当地时间）</p>
+            <div class="booking-links"><a class="source-link" href="https://www.cathaypacific.com/" target="_blank">国泰官网</a></div>
+          </div>
+        </div>
+        <div class="booking">
+          <div class="booking-icon">🍽️</div>
+          <div><h3>Matt’s in the Market</h3><p>13:00 · 已预订 · 需要严格控制至约 14:10</p>
+            <div class="booking-links">
+              <a class="source-link" href="https://maps.apple.com/?q=Matt%27s%20in%20the%20Market%20Seattle" target="_blank">Apple Maps</a>
+              <a class="source-link" href="https://www.google.com/maps/search/?api=1&query=Matt%27s+in+the+Market+Seattle" target="_blank">Google Maps</a>
+            </div>
+          </div>
+        </div>
+        <div class="booking">
+          <div class="booking-icon">⛴️</div>
+          <div><h3>Argosy Harbor Cruise</h3><p>14:45 · Pier 55 · 建议 14:25 抵达</p>
+            <div class="booking-links">
+              <a class="source-link" href="https://www.argosycruises.com/cruises/harbor-cruise/" target="_blank">游船官网</a>
+              <a class="source-link" href="https://maps.apple.com/?q=Argosy%20Cruises%20Pier%2055%20Seattle" target="_blank">码头地图</a>
+            </div>
+          </div>
+        </div>
+        <div class="booking">
+          <div class="booking-icon">✈️</div>
+          <div><h3>AC8809 · SEA → YVR</h3><p>19:20 起飞 · 20:27 抵达</p>
+            <div class="booking-links"><a class="source-link" href="https://www.aircanada.com/" target="_blank">加拿大航空</a></div>
+          </div>
+        </div>
+        <div class="booking">
+          <div class="booking-icon">🏨</div>
+          <div><h3>The Westin Wall Centre, Vancouver Airport</h3><p>抵达 YVR 后乘酒店 Shuttle Bus</p>
+            <div class="booking-links">
+              <a class="source-link" href="https://maps.apple.com/?q=The%20Westin%20Wall%20Centre%20Vancouver%20Airport" target="_blank">Apple Maps</a>
+              <a class="source-link" href="https://www.google.com/maps/search/?api=1&query=The+Westin+Wall+Centre+Vancouver+Airport" target="_blank">Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="section" id="notes">
+      <div class="section-title"><h2>随身备注</h2><small>自动保存在本机</small></div>
+      <div class="card"><div class="card-pad notes-grid">
+        <div class="field"><label for="reservationNotes">预订编号 / 座位 / 重要信息</label><textarea id="reservationNotes" placeholder="例如：Argosy confirmation、Matt’s reservation name…"></textarea></div>
+        <div class="field"><label for="dayNotes">当天临时记录</label><textarea id="dayNotes" placeholder="例如：行李已直挂 YVR、实际出关时间、需要购买的物品…"></textarea></div>
+        <div class="field"><label for="hotelNotes">酒店接驳信息</label><textarea id="hotelNotes" placeholder="例如：酒店班车上车点、联系电话…"></textarea></div>
+        <div class="toolbar">
+          <button class="primary" id="exportBtn">导出进度</button>
+          <button class="secondary" id="copyBtn">复制当天摘要</button>
+          <button class="danger" id="resetBtn">清空本页数据</button>
+        </div>
+        <p class="footnote">勾选状态、方案选择和备注使用浏览器本地储存。换手机或清除浏览器数据前，请先“导出进度”。</p>
+      </div></div>
+
+      <div class="card"><div class="card-pad">
+        <h3 style="font-size:15px;margin:0 0 8px">离线说明</h3>
+        <p class="footnote" style="font-size:12px;margin:0">
+          核心行程、备注和勾选功能不依赖网络；地图、航司及景点官网需要联网。
+          建议提前把此文件保存到“文件”App，并在出发前实际打开一次。
+        </p>
+      </div></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Bottom navigation">
+    <button class="nav-btn active" data-section="today"><span>🧭</span>今日</button>
+    <button class="nav-btn" data-section="plan"><span>🗂️</span>方案</button>
+    <button class="nav-btn" data-section="bookings"><span>🎫</span>预订</button>
+    <button class="nav-btn" data-section="notes"><span>📝</span>备注</button>
+  </nav>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(() => {
+  const KEY = "roadbook-2026-10-01-v1";
+  const defaultState = {
+    plan: "tight",
+    transfer: "uber",
+    completed: {"car-hkg":true,"cx852":true,"ac8809":true,"westin":true},
+    notes: {reservationNotes:"",dayNotes:"",hotelNotes:""}
+  };
+  let state;
+  try { state = {...defaultState, ...JSON.parse(localStorage.getItem(KEY) || "{}")}; }
+  catch(e){ state = structuredClone(defaultState); }
+
+  const commonStart = [
+    {id:"car-hkg",time:"09:30",title:"商务车前往香港机场",place:"Hong Kong International Airport",desc:"建议在车上再次确认护照、美国入境材料、两段登机牌及托运行李标签。",tag:"已安排",tagClass:"booked",icon:"🚘",map:"Hong Kong International Airport"},
+    {id:"cx852",time:"13:25",title:"CX852 · 香港 → 西雅图",place:"HKG → SEA",desc:"计划 10:05 抵达西雅图。香港与西雅图在该日期相差 15 小时，因此会在同一个日历日抵达。",tag:"已出票",tagClass:"booked",icon:"✈️",map:"Seattle Tacoma International Airport"},
+    {id:"sea-arrival",time:"10:05",title:"SEA 入境、取行李、海关及转运行李",place:"Seattle-Tacoma International Airport",desc:"按“先取行李”流程办理。若行李未直挂 YVR，需要确认重新托运位置；离开机场前确认 AC8809 登机牌及行李状态。",tag:"预留约85分钟",tagClass:"tight",icon:"🛂",map:"Seattle Tacoma International Airport"},
+    {id:"downtown",time:"11:30",title:"前往 Pike Place / Westlake",place:"SEA → Downtown Seattle",desc:"TRANSFER_HINT",tag:"二选一",tagClass:"option",icon:"🚕",map:"Pike Place Market Seattle"}
+  ];
+
+  const tightPlan = [
+    {id:"market-quick",time:"12:20",title:"Pike Place Market 快速浏览",place:"Pike Place Market",desc:"优先走主入口、鱼市场、Original Starbucks 外观；Piroshky 与 Luke’s 暂不排队，避免影响 13:00 订位。",tag:"控时",tagClass:"tight",icon:"🐟",map:"Pike Place Market Seattle"},
+    {id:"matts",time:"13:00",title:"Matt’s in the Market 午餐",place:"Pike Place Market",desc:"最晚约 14:10 完成结账；可在入座时直接向服务员说明 14:45 有游船。",tag:"已预订",tagClass:"booked",icon:"🍽️",map:"Matt's in the Market Seattle"},
+    {id:"walk-pier",time:"14:15",title:"步行前往 Argosy Pier 55",place:"Pike Place → Pier 55",desc:"目标 14:25 前抵达。Overlook Walk 只作为下行通道与沿途观景，不额外停留。",tag:"10分钟窗口",tagClass:"tight",icon:"🚶",map:"Argosy Cruises Pier 55 Seattle"},
+  ];
+
+  const relaxedPlan = [
+    {id:"market-food",time:"12:20",title:"Pike Place Market + 快速午餐",place:"Pike Place Market",desc:"Piroshky Piroshky 与 Luke’s Lobster 二选一；Original Starbucks 仅外观拍照。避免同时排两家长队。",tag:"轻松方案",tagClass:"option",icon:"🥐",map:"Pike Place Market Seattle"},
+    {id:"overlook",time:"13:35",title:"Storyville / Overlook Walk",place:"Pike Place Waterfront",desc:"咖啡与散步二选一，14:10 前开始向 Pier 55 移动。",tag:"可删减",tagClass:"option",icon:"☕️",map:"Overlook Walk Seattle"},
+    {id:"walk-pier",time:"14:10",title:"前往 Argosy Pier 55",place:"Seattle Waterfront",desc:"目标 14:25 前完成签到并排队登船。",tag:"预留登船",tagClass:"booked",icon:"🚶",map:"Argosy Cruises Pier 55 Seattle"},
+  ];
+
+  const commonEnd = [
+    {id:"argosy",time:"14:45",title:"Argosy Harbor Cruise",place:"Pier 55",desc:"约 1 小时港湾游船。上船后优先选择无遮挡、便于拍摄城市天际线的位置。",tag:"已预订",tagClass:"booked",icon:"⛴️",map:"Argosy Cruises Pier 55 Seattle"},
+    {id:"to-airport",time:"16:15",title:"Symphony Station → SEA Airport",place:"Downtown Seattle → SEA",desc:"下船后直接前往 Symphony Station；目标 17:05—17:15 抵达机场。当天需再次查看 Link 1 Line 运行状态。",tag:"机场缓冲",tagClass:"tight",icon:"🚈",map:"Symphony Station Seattle"},
+    {id:"airport-buffer",time:"17:15",title:"安检、登机口及晚间补给",place:"Seattle-Tacoma International Airport",desc:"确认托运行李状态后通过安检。不要把正式晚餐安排在市区，可在机场简单补给。",tag:"约2小时",tagClass:"option",icon:"🧳",map:"Seattle Tacoma International Airport"},
+    {id:"ac8809",time:"19:20",title:"AC8809 · 西雅图 → 温哥华",place:"SEA → YVR",desc:"计划 20:27 抵达温哥华。",tag:"已出票",tagClass:"booked",icon:"✈️",map:"Vancouver International Airport"},
+    {id:"yvr-arrival",time:"20:27",title:"温哥华入境、取行李",place:"Vancouver International Airport",desc:"完成加拿大入境后，按酒店最新指引前往 Shuttle Bus 上车点。",tag:"入境",tagClass:"option",icon:"🇨🇦",map:"Vancouver International Airport"},
+    {id:"shuttle",time:"21:30",title:"酒店 Shuttle Bus",place:"YVR → Westin Wall Centre",desc:"实际时间取决于温哥华入境和取行李速度；上车前再次核对是否为 Westin Wall Centre 的班车。",tag:"时间浮动",tagClass:"option",icon:"🚌",map:"The Westin Wall Centre Vancouver Airport"},
+    {id:"westin",time:"22:00",title:"入住 The Westin Wall Centre",place:"Richmond, BC",desc:"抵达后尽早休息，为 10月2日 10:00 取车及长途驾驶保留体力。",tag:"已预订",tagClass:"booked",icon:"🏨",map:"The Westin Wall Centre Vancouver Airport"}
+  ];
+
+  function currentEvents(){
+    return [...commonStart, ...(state.plan === "tight" ? tightPlan : relaxedPlan), ...commonEnd];
+  }
+  function save(){
+    localStorage.setItem(KEY, JSON.stringify(state));
+    updateProgress();
+    updateNext();
+  }
+  function mapLinks(query){
+    const q = encodeURIComponent(query);
+    return {
+      apple:`https://maps.apple.com/?q=${q}`,
+      google:`https://www.google.com/maps/search/?api=1&query=${q}`
+    };
+  }
+  function render(){
+    document.querySelectorAll(".plan-switch").forEach(b => b.classList.toggle("active", b.dataset.plan === state.plan));
+    document.querySelectorAll(".transfer-switch").forEach(b => b.classList.toggle("active", b.dataset.transfer === state.transfer));
+    document.getElementById("planLabel").textContent = state.plan === "tight" ? "Plan A · 全部保留" : "Plan B · 游船优先";
+    document.getElementById("transferHint").textContent = state.transfer === "uber"
+      ? "推荐到达层直接叫车；优点是节省步行和换乘时间，缺点是受市区交通影响。"
+      : "跟随 Link light rail 标识前往 SeaTac/Airport Station；时间更可控，但站内步行和列车运行时间更长。";
+
+    const timeline = document.getElementById("timeline");
+    timeline.innerHTML = currentEvents().map(ev => {
+      const done = !!state.completed[ev.id];
+      let desc = ev.desc;
+      if(desc === "TRANSFER_HINT"){
+        desc = state.transfer === "uber"
+          ? "Uber 直接前往 Pike Place Market；若出关晚，优先用此方案争取时间。"
+          : "乘 Link 1 Line 前往 Westlake，再步行到 Pike Place；出发前查看实时运营状态。";
+      }
+      const links = mapLinks(ev.map);
+      return `
+        <article class="event ${done ? "done" : ""}">
+          <div class="time">${ev.time}</div>
+          <div class="track"><div class="dot"></div></div>
+          <div class="event-content">
+            <div class="event-top">
+              <h3>${ev.icon} ${ev.title}</h3>
+              <span class="tag ${ev.tagClass || ""}">${ev.tag || ""}</span>
+            </div>
+            <p>${desc}</p>
+            <div class="actions">
+              <button class="action check ${done ? "done" : ""}" data-check="${ev.id}">${done ? "✓ 已完成" : "○ 标记完成"}</button>
+              <a class="action" href="${links.apple}" target="_blank">Apple 地图</a>
+              <a class="action" href="${links.google}" target="_blank">Google 地图</a>
+              <button class="action note-toggle" data-note="${ev.id}">备注</button>
+            </div>
+            <div class="mini-note ${state.notes["event-"+ev.id] ? "show" : ""}" id="note-${ev.id}">
+              <textarea data-event-note="${ev.id}" placeholder="为此项目添加临时备注…">${escapeHtml(state.notes["event-"+ev.id] || "")}</textarea>
+            </div>
+          </div>
+        </article>`;
+    }).join("");
+
+    timeline.querySelectorAll("[data-check]").forEach(btn => btn.addEventListener("click", () => {
+      const id = btn.dataset.check;
+      state.completed[id] = !state.completed[id];
+      save(); render();
+    }));
+    timeline.querySelectorAll(".note-toggle").forEach(btn => btn.addEventListener("click", () => {
+      document.getElementById("note-"+btn.dataset.note).classList.toggle("show");
+    }));
+    timeline.querySelectorAll("[data-event-note]").forEach(area => area.addEventListener("input", () => {
+      state.notes["event-"+area.dataset.eventNote] = area.value; save();
+    }));
+    updateProgress();
+    updateNext();
+  }
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
+  }
+  function updateProgress(){
+    const events = currentEvents();
+    const done = events.filter(e => state.completed[e.id]).length;
+    document.getElementById("progressText").textContent = `${done} / ${events.length}`;
+    document.getElementById("progressBar").style.width = `${Math.round(done/events.length*100)}%`;
+  }
+  function updateNext(){
+    const ev = currentEvents().find(e => !state.completed[e.id]);
+    document.getElementById("nextTitle").textContent = ev ? `${ev.time} · ${ev.title}` : "当天项目已全部完成";
+    document.getElementById("nextDetail").textContent = ev ? `${ev.place}｜${ev.desc === "TRANSFER_HINT" ? "根据上方选择的交通方式前往市区。" : ev.desc}` : "可以在备注页导出当天进度。";
+  }
+  function toast(msg){
+    const el=document.getElementById("toast");el.textContent=msg;el.classList.add("show");
+    setTimeout(()=>el.classList.remove("show"),1800);
+  }
+
+  document.querySelectorAll(".plan-switch").forEach(btn => btn.addEventListener("click", () => {
+    state.plan=btn.dataset.plan; save(); render(); toast(state.plan==="tight"?"已切换：全部保留":"已切换：游船优先");
+  }));
+  document.querySelectorAll(".transfer-switch").forEach(btn => btn.addEventListener("click", () => {
+    state.transfer=btn.dataset.transfer; save(); render();
+  }));
+  document.querySelectorAll(".nav-btn").forEach(btn => btn.addEventListener("click", () => {
+    document.querySelectorAll(".nav-btn").forEach(x=>x.classList.remove("active"));
+    document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));
+    btn.classList.add("active");
+    document.getElementById(btn.dataset.section).classList.add("active");
+    window.scrollTo({top:0,behavior:"smooth"});
+  }));
+
+  ["reservationNotes","dayNotes","hotelNotes"].forEach(id => {
+    const el=document.getElementById(id);
+    el.value=state.notes[id] || "";
+    el.addEventListener("input",()=>{state.notes[id]=el.value;save();});
+  });
+
+  document.getElementById("exportBtn").addEventListener("click",()=>{
+    const blob=new Blob([JSON.stringify({date:"2026-10-01",...state},null,2)],{type:"application/json"});
+    const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="roadbook-2026-10-01-progress.json";a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href),500);toast("进度文件已导出");
+  });
+
+  document.getElementById("copyBtn").addEventListener("click",async()=>{
+    const remaining=currentEvents().filter(e=>!state.completed[e.id]).map(e=>`${e.time} ${e.title}`).join("\n");
+    const text=`10月1日 香港—西雅图—温哥华\n方案：${state.plan==="tight"?"Plan A 全部保留":"Plan B 游船优先"}\n交通：${state.transfer==="uber"?"Uber":"Link 1 Line"}\n\n待完成：\n${remaining || "全部完成"}\n\n临时备注：\n${state.notes.dayNotes || "无"}`;
+    try{await navigator.clipboard.writeText(text);toast("当天摘要已复制");}
+    catch(e){toast("浏览器未授权复制");}
+  });
+
+  document.getElementById("resetBtn").addEventListener("click",()=>{
+    if(confirm("确定清空本页的勾选、方案选择和备注吗？")){
+      localStorage.removeItem(KEY);state=structuredClone(defaultState);
+      ["reservationNotes","dayNotes","hotelNotes"].forEach(id=>document.getElementById(id).value="");
+      render();toast("已清空");
+    }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
