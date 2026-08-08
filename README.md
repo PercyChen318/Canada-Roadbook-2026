@@ -1,4 +1,4 @@
-# Canada Roadbook 2026 — Full Edition v3.3
+# Canada Roadbook 2026 — Full Edition v3.5
 
 ## 本版更新
 - 已将 Day 3–Day 7 的“总体行程图”正式加入整本路书。
@@ -9,3 +9,10 @@
 - 所有行程图均已直接嵌入 HTML，无需额外上传图片文件或 assets 文件夹。
 
 访问密码：`PercyChen318`
+
+
+## v3.5 更新
+- Day 7 回程增加 D Dutchmen Dairy（Sicamous）轻停留。
+- Day 7 Vancouver 酒店更新为 L’Hermitage Hotel。
+- Day 8 调整为 Stanley Park / English Bay / Gastown / Canada Place / Shopping 的休闲城市日。
+- Elisa Steakhouse 时间调整为 19:30。
