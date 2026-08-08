@@ -1,4 +1,4 @@
-# Canada Roadbook 2026 — Full Edition v3.6
+# Canada Roadbook 2026 — Full Edition v3.7
 
 ## 本版更新
 
@@ -23,6 +23,12 @@
 - 清除 Auberge Vancouver Hotel 残留。
 - Day 9 出发酒店与地图起点同步更新为 L’Hermitage Hotel。
 - Day 8 顶部标签由“温哥华市区 / 北岸”调整为“温哥华市区”。
-- 页面版本号更新为 v3.6。
+- 页面版本号更新为 v3.7。
 
 访问密码：`PercyChen318`
+
+
+## v3.7 update
+- Replaced Day 7 route overview with the new poster-style graphic.
+- Kept Chef Tian recommended dishes in the Day 7 dinner section.
+- Removed the Day 8 route overview graphic per latest preference.
