@@ -1,8 +1,8 @@
-# Canada Roadbook 2026 — Full Edition v3.9
+# Canada Roadbook 2026 — Full Edition v4.0
 
 GitHub Pages 入口文件：`index.html`
 
-## v3.9 已确认更新
+## v4.0 已确认更新
 
 - **Day 7 · Canmore → Vancouver**
   - 酒店统一更新为 **Azur Legacy Collection Hotel**
@@ -28,3 +28,13 @@ GitHub Pages 入口文件：`index.html`
 ## GitHub 使用
 
 将 `index.html` 与本文件 `README.md` 放在仓库根目录即可。`index.html` 已整理为单文件版本，不依赖本地 manifest 或 icon 文件；页面中的在线图片需要网络连接加载。
+
+
+## v4.0 Update Notes
+
+- Refined Day 7 route visualization.
+- Updated final Vancouver arrival sequence:
+  Canmore → D Dutchmen Dairy → Kamloops → Richmond (田师傅) → Azur Legacy Collection Hotel.
+- Added trip philosophy overview.
+- Added confirmed reservation summary.
+- Optimized mobile reading experience.
