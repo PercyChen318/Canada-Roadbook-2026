@@ -1,43 +1,30 @@
-# Canada Roadbook 2026 — Full Edition v3.7
+# Canada Roadbook 2026 — Full Edition v3.9
 
-## 本版更新
+GitHub Pages 入口文件：`index.html`
 
-### Day 7 · 10月7日｜Canmore → Vancouver
-- 回程路线新增 **D Dutchmen Dairy Ltd（Sicamous）**，作为当天主要特色休息点。
-- Sicamous Lookout 调整为“天气好、时间宽裕时可选”，避免长途返程停靠过多。
-- 保留 Kamloops 加油/补给逻辑。
-- Richmond 晚餐保留“品一品 / 田师傅”选择，并为 **田师傅总店**补充三道当前菜单招牌：
-  1. 鲍鱼仔辣椒炒肉
-  2. 生爆安格斯牛肉
-  3. 地锅鸡（6饼）
-- 10.7–10.9 Vancouver 住宿统一更新为 **L’Hermitage Hotel**。
+## v3.9 已确认更新
 
-### Day 8 · 10月8日｜Vancouver City Day
-- 完全按最终确认版重做：
-  **Stanley Park 骑行 → English Bay → 回 L’Hermitage 放车休息 → Gastown → Coffee → Canada Place → CF Pacific Centre Shopping → BC Place → 19:30 Elisa Steakhouse**。
-- 删除旧版 FlyOver、Capilano Suspension Bridge、Cypress Mountain / North Shore 备选等内容。
-- 增加新的 Day 8 总体行程图，并拆分“上午用车 / 下午步行”路线按钮。
-- Elisa 时间统一为 **19:30**。
+- **Day 7 · Canmore → Vancouver**
+  - 酒店统一更新为 **Azur Legacy Collection Hotel**
+  - 保留 **D Dutchmen Dairy**
+  - **Kamloops** 仅作加油 / 补给 / 短休
+  - 晚餐固定 **田师傅总店 · Chef Tian’s**，之后返回 Azur
+  - 增加 **Rocky Mountain Bagel Company** 早餐推荐
+  - 更新 Day 7 总体行程图
 
-### 全站一致性清理
-- 清除 Auberge Vancouver Hotel 残留。
-- Day 9 出发酒店与地图起点同步更新为 L’Hermitage Hotel。
-- Day 8 顶部标签由“温哥华市区 / 北岸”调整为“温哥华市区”。
-- 页面版本号更新为 v3.7。
+- **Day 8 · Vancouver City Walk + Nature**
+  - 全天**不开车**，采用步行 + Taxi / Transit
+  - **10:00 Cafe Medina**，推荐菜迁移至 Day 8 早餐模块
+  - Gastown → Coffee → Canada Place → CF Pacific Centre Shopping
+  - 下午 Stanley Park + English Bay
+  - 19:30 Elisa Steakhouse
+  - 删除旧的开车 / 骑行路线逻辑及 BC Place 节点
 
-访问密码：`PercyChen318`
+- **Day 9 · Departure Day**
+  - 删除 Cafe Medina 和其他上午活动
+  - Azur 退房后直接前往 YVR / SIXT 还车
+  - 11:00 还车；14:10 CX867 返回香港
 
+## GitHub 使用
 
-## v3.7 update
-- Replaced Day 7 route overview with the new poster-style graphic.
-- Kept Chef Tian recommended dishes in the Day 7 dinner section.
-- Removed the Day 8 route overview graphic per latest preference.
-
-
-## Version 4.0 Update
-
-- Updated Vancouver final itinerary.
-- Changed Vancouver accommodation reference to Azur Legacy Collection Hotel.
-- Revised Day 8 into a car-free City Walk + Nature itinerary.
-- Moved Cafe Medina breakfast to October 8 and removed it from October 9.
-- Added optional Capilano Suspension Bridge Park and Cypress Lookout.
+将 `index.html` 与本文件 `README.md` 放在仓库根目录即可。`index.html` 已整理为单文件版本，不依赖本地 manifest 或 icon 文件；页面中的在线图片需要网络连接加载。
